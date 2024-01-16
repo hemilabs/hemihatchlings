@@ -1,27 +1,10 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true
+    es2021: true,
+    node: true
   },
-  extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript'
-  ],
+  extends: 'standard-with-typescript',
   overrides: [
-    {
-      files: ['*.spec.ts', '*.spec.tsx', '*.tsx'],
-      rules: {
-        'max-statements': ['error', 20],
-        'max-nested-callbacks': ['error', 5],
-        'max-lines-per-function': 'off',
-        'max-lines': ['error', {
-          max: 300,
-          skipBlankLines: true,
-          skipComments: true
-        }],
-        complexity: ['error', 6]
-      }
-    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -30,12 +13,15 @@ module.exports = {
     tsconfigRootDir: __dirname
   },
   plugins: [
-    'react',
     'sonarjs'
   ],
   rules: {
     '@typescript-eslint/triple-slash-reference': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/no-extraneous-class': 'off',
+    'semi': ["error", "never"],
+    'quotes': ["error", "single"],
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     indent: ['error', 2],
@@ -69,6 +55,14 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['error'],
     'max-len': ['error', {
       code: 80
-    }]
+    }],
+    overrides: [
+      {
+        files: ['*.spec.ts'],
+        rules: {
+          'max-nested-callbacks': ['error', 5],
+        }
+      }
+    ]
   }
 }
