@@ -1,14 +1,14 @@
 import { describe, it, expect } from "vitest"
-import { Id } from "../valueObjects/Id"
 import { Entity } from "./Entity"
 import { ValueObject } from "./ValueObject"
+import { Uuid } from '../valueObjects/Uuid'
 
 interface TestProps {
   value: string
 }
 
 class TestEntity extends Entity<TestProps> {
-  static create(props: TestProps, id: Id): TestEntity {
+  static create(props: TestProps, id: Uuid): TestEntity {
     return new TestEntity(props, id)
   }
 
@@ -17,7 +17,7 @@ class TestEntity extends Entity<TestProps> {
   }
 }
 
-const testId = Id.create('test-id')
+const testId = Uuid.create()
 
 describe("src/domain/Entity", () => {
   it("should be defined", () => {
