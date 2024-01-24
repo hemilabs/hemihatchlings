@@ -1,0 +1,181 @@
+// Vitest Snapshot v1
+
+exports[`src/presentation/Main > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col"
+  >
+    <div
+      class="flex flex-row w-full justify-center items-center h-36 gap-x-8"
+    >
+      <div>
+        <h1
+          class="font-poller text-white text-2xl"
+        >
+          BB
+        </h1>
+      </div>
+      <div
+        class="grow border h-0 border-b-0 max-h-0 max-w-5xl w-auto border-white"
+      />
+      <div>
+        <ul
+          class="font-monaco text-white text-2xl text-right"
+        >
+          <a
+            class="hover:text-gray-400"
+            href="#"
+          >
+            <li>
+              GITHUB
+            </li>
+          </a>
+          <a
+            class="hover:text-gray-400"
+            href="#"
+          >
+            <li>
+              COMMUNITY
+            </li>
+          </a>
+          <a
+            class="hover:text-gray-400"
+            href="#"
+          >
+            <li>
+              TWITTER
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="flex flex-col justify-center items-center h-36"
+    >
+      <img
+        alt="logo"
+        class=""
+        src="/src/assets/logo.svg"
+      />
+      <h2
+        class="font-poller text-white text-3xl mt-8"
+      >
+        Learn how Ethereum & Bitcoin Finality Works.
+      </h2>
+    </div>
+    <div
+      class="mt-12"
+    >
+      <div
+        class="flex flex-row justify-center gap-16"
+      >
+        <div
+          class="p-8 border border-white bg-fire-yellow"
+        >
+          <img
+            alt="Fire Egg"
+            class=""
+            src="/src/assets/fire-egg.png"
+          />
+        </div>
+        <div
+          class="p-8 border border-white bg-water-blue"
+        >
+          <img
+            alt="Water Egg"
+            class=""
+            src="/src/assets/water-egg.png"
+          />
+        </div>
+        <div
+          class="p-8 border border-white bg-grass-green"
+        >
+          <img
+            alt="Grass Egg"
+            class=""
+            src="/src/assets/grass-egg.png"
+          />
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center mt-8"
+      >
+        <h2
+          class="font-monaco font-normal text-white text-4xl mt-8"
+        >
+          FREE MINT + GAS FEES
+        </h2>
+      </div>
+    </div>
+    <div
+      class="mt-12"
+    >
+      <div
+        class="flex flex-col items-center gap-8"
+      >
+        <div
+          class="flex flex-col max-w-screen-xl items-center p-8 border border-white"
+        >
+          <div
+            class="flex flex-row justify-between w-full"
+          >
+            <h2
+              class="font-space font-bold text-white text-5xl hover:text-gray-400"
+            >
+              HOW IT WORKS
+            </h2>
+            <img
+              alt="Minus Icon"
+              class="w-12"
+              src="/src/assets/minus-icon.png"
+            />
+          </div>
+          <div
+            class="font-space font-light text-white text-3xl mt-8"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel fringilla est ullamcorper eget nulla facilisi.
+            </p>
+            <br />
+            <p>
+              Ut aliquam purus sit amet luctus venenatis. Egestas sed sed risus pretium quam vulputate dignissim. Adipiscing at in tellus integer feugiat. Pulvinar proin gravida hendrerit lectus.
+            </p>
+            <br />
+            <p>
+              Eleifend donec pretium vulputate sapien nec sagittis aliquam. Donec ac odio tempor.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
+        >
+          <h2
+            class="font-space font-normal text-white text-4xl"
+          >
+            ADD A FEATURE
+          </h2>
+          <img
+            alt="Plus Icon"
+            class="w-12"
+            src="/src/assets/plus-icon.png"
+          />
+        </div>
+        <div
+          class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
+        >
+          <h2
+            class="font-space font-normal text-white text-4xl"
+          >
+            COMMUNITY
+          </h2>
+          <img
+            alt="Plus Icon"
+            class="w-12"
+            src="/src/assets/plus-icon.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

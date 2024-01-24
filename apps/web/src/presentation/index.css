@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #000;
+  cursor: url("assets/cursor.png"), pointer;
+}
+
+a {
+  cursor: url("assets/cursor.png"), pointer;
+}
+
+.font-monaco {
+  font-family: ui-monospace, 'Monaco', monospace;
+}
+
+.font-poller {
+  font-family: ui-sans-serif, 'Poller One', sans-serif;
+}
+
+.font-space {
+  font-family: ui-monospace, 'Space Mono', monospace;
+}
+
+@font-face {
+  font-family: Monaco;
+  src: url("assets/Monaco.ttf");
+}

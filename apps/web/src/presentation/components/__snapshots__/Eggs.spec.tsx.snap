@@ -1,0 +1,46 @@
+// Vitest Snapshot v1
+
+exports[`src/presentation/Eggs > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row justify-center gap-16"
+  >
+    <div
+      class="p-8 border border-white bg-fire-yellow"
+    >
+      <img
+        alt="Fire Egg"
+        class=""
+        src="/src/assets/fire-egg.png"
+      />
+    </div>
+    <div
+      class="p-8 border border-white bg-water-blue"
+    >
+      <img
+        alt="Water Egg"
+        class=""
+        src="/src/assets/water-egg.png"
+      />
+    </div>
+    <div
+      class="p-8 border border-white bg-grass-green"
+    >
+      <img
+        alt="Grass Egg"
+        class=""
+        src="/src/assets/grass-egg.png"
+      />
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-center mt-8"
+  >
+    <h2
+      class="font-monaco font-normal text-white text-4xl mt-8"
+    >
+      FREE MINT + GAS FEES
+    </h2>
+  </div>
+</DocumentFragment>
+`;
