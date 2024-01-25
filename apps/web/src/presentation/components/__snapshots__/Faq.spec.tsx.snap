@@ -1,0 +1,71 @@
+// Vitest Snapshot v1
+
+exports[`src/presentation/Faq > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col items-center gap-8"
+  >
+    <div
+      class="flex flex-col max-w-screen-xl items-center p-8 border border-white"
+    >
+      <div
+        class="flex flex-row justify-between w-full"
+      >
+        <h2
+          class="font-space font-bold text-white text-5xl hover:text-gray-400"
+        >
+          HOW IT WORKS
+        </h2>
+        <img
+          alt="Minus Icon"
+          class="w-12"
+          src="/src/assets/minus-icon.png"
+        />
+      </div>
+      <div
+        class="font-space font-light text-white text-3xl mt-8"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel fringilla est ullamcorper eget nulla facilisi.
+        </p>
+        <br />
+        <p>
+          Ut aliquam purus sit amet luctus venenatis. Egestas sed sed risus pretium quam vulputate dignissim. Adipiscing at in tellus integer feugiat. Pulvinar proin gravida hendrerit lectus.
+        </p>
+        <br />
+        <p>
+          Eleifend donec pretium vulputate sapien nec sagittis aliquam. Donec ac odio tempor.
+        </p>
+      </div>
+    </div>
+    <div
+      class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
+    >
+      <h2
+        class="font-space font-normal text-white text-4xl"
+      >
+        ADD A FEATURE
+      </h2>
+      <img
+        alt="Plus Icon"
+        class="w-12"
+        src="/src/assets/plus-icon.png"
+      />
+    </div>
+    <div
+      class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
+    >
+      <h2
+        class="font-space font-normal text-white text-4xl"
+      >
+        COMMUNITY
+      </h2>
+      <img
+        alt="Plus Icon"
+        class="w-12"
+        src="/src/assets/plus-icon.png"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

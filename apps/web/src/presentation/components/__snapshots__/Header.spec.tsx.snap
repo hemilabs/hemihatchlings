@@ -1,0 +1,50 @@
+// Vitest Snapshot v1
+
+exports[`src/presentation/Header > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row w-full justify-center items-center h-36 gap-x-8"
+  >
+    <div>
+      <h1
+        class="font-poller text-white text-2xl"
+      >
+        BB
+      </h1>
+    </div>
+    <div
+      class="grow border h-0 border-b-0 max-h-0 max-w-5xl w-auto border-white"
+    />
+    <div>
+      <ul
+        class="font-monaco text-white text-2xl text-right"
+      >
+        <a
+          class="hover:text-gray-400"
+          href="#"
+        >
+          <li>
+            GITHUB
+          </li>
+        </a>
+        <a
+          class="hover:text-gray-400"
+          href="#"
+        >
+          <li>
+            COMMUNITY
+          </li>
+        </a>
+        <a
+          class="hover:text-gray-400"
+          href="#"
+        >
+          <li>
+            TWITTER
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
