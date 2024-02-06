@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import fireEgg from '../../assets/fire-egg.png'
 import waterEgg from '../../assets/water-egg.png'
 import grassEgg from '../../assets/grass-egg.png'
 import chevron from '../../assets/chevron.svg'
+import { servicesContext } from '../context'
 
 function Eggs(): JSX.Element {
   const [active, setActive] = useState(0)
+  const [address, setAddress] = useState('')
+  const { connectWalletService } = useContext(servicesContext)
 
   const goPrevious = () => {
     setActive(active - 1)
@@ -13,6 +16,13 @@ function Eggs(): JSX.Element {
 
   const goNext = () => {
     setActive(active + 1)
+  }
+
+  const connectWallet = async () => {
+    const response = await connectWalletService.execute()
+
+    setAddress(response.address)
+    console.log(address)
   }
 
   return (
@@ -26,33 +36,39 @@ function Eggs(): JSX.Element {
       </button>
 
       <div className={active === 0 ? '' : 'hidden'}>
-        <div className="p-8 border border-white bg-fire-yellow">
-          <img src={fireEgg} alt="Fire Egg" />
-        </div>
-        <div className="font-monaco text-sm text-white mt-2
-          sm:text-base md:text-lg md:mt-4">
-          01
-        </div>
+        <button onClick={connectWallet}>
+          <div className="p-8 border border-white bg-fire-yellow">
+            <img src={fireEgg} alt="Fire Egg" />
+          </div>
+          <div className="font-monaco text-sm text-white mt-2 text-left
+            sm:text-base md:text-lg md:mt-4">
+            01
+          </div>
+        </button>
       </div>
 
       <div className={`${active === 1 ? '' : 'hidden'} lg:block`}>
-        <div className="p-8 border border-white bg-water-blue">
-          <img src={waterEgg} alt="Water Egg" />
-        </div>
-        <div className="font-monaco text-sm text-white mt-2
-          sm:text-base md:text-lg md:mt-4">
-          02
-        </div>
+        <button onClick={connectWallet}>
+          <div className="p-8 border border-white bg-water-blue">
+            <img src={waterEgg} alt="Water Egg" />
+          </div>
+          <div className="font-monaco text-sm text-white mt-2 text-left
+            sm:text-base md:text-lg md:mt-4">
+            02
+          </div>
+        </button>
       </div>
 
       <div className={`${active === 2 ? '' : 'hidden'} lg:block`}>
-        <div className="p-8 border border-white bg-grass-green">
-          <img src={grassEgg} alt="Grass Egg" />
-        </div>
-        <div className="font-monaco text-sm text-white mt-2
-          sm:text-base md:text-lg md:mt-4">
-          03
-        </div>
+        <button onClick={connectWallet}>
+          <div className="p-8 border border-white bg-grass-green">
+            <img src={grassEgg} alt="Grass Egg" />
+          </div>
+          <div className="font-monaco text-sm text-white mt-2 text-left
+            sm:text-base md:text-lg md:mt-4">
+            03
+          </div>
+        </button>
       </div>
 
       <button

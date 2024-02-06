@@ -2,12 +2,12 @@
 
 exports[`src/presentation/Header > renders correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="flex flex-row w-full justify-center items-center h-36 gap-x-8"
+  <header
+    class="flex flex-row w-full justify-center items-center h-24 gap-x-8 sm:h-28 lg:h-32"
   >
     <div>
       <h1
-        class="font-poller text-white text-2xl"
+        class="font-poller text-white text-lg sm:text-xl lg:text-2xl"
       >
         BB
       </h1>
@@ -17,7 +17,7 @@ exports[`src/presentation/Header > renders correctly 1`] = `
     />
     <div>
       <ul
-        class="font-monaco text-white text-2xl text-right"
+        class="font-monaco text-white text-sm text-right sm:text-lg lg:text-xl"
       >
         <a
           class="hover:text-gray-400"
@@ -45,6 +45,6 @@ exports[`src/presentation/Header > renders correctly 1`] = `
         </a>
       </ul>
     </div>
-  </div>
+  </header>
 </DocumentFragment>
 `;

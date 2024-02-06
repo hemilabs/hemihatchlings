@@ -12,18 +12,18 @@ exports[`src/presentation/Faq > renders correctly 1`] = `
         class="flex flex-row justify-between w-full"
       >
         <h2
-          class="font-space font-bold text-white text-5xl hover:text-gray-400"
+          class="font-space font-bold text-white text-lg hover:text-gray-400 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
         >
           HOW IT WORKS
         </h2>
         <img
           alt="Minus Icon"
-          class="w-12"
+          class="w-4 md:w-6 lg:w-8"
           src="/src/assets/minus-icon.png"
         />
       </div>
       <div
-        class="font-space font-light text-white text-3xl mt-8"
+        class="font-space font-light text-white text-sm mt-4 sm:text-base md:text-lg lg:text-xl"
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel fringilla est ullamcorper eget nulla facilisi.
@@ -42,13 +42,13 @@ exports[`src/presentation/Faq > renders correctly 1`] = `
       class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
     >
       <h2
-        class="font-space font-normal text-white text-4xl"
+        class="font-space font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
       >
         ADD A FEATURE
       </h2>
       <img
         alt="Plus Icon"
-        class="w-12"
+        class="w-4 md:w-6 lg:w-8"
         src="/src/assets/plus-icon.png"
       />
     </div>
@@ -56,13 +56,13 @@ exports[`src/presentation/Faq > renders correctly 1`] = `
       class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
     >
       <h2
-        class="font-space font-normal text-white text-4xl"
+        class="font-space font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
       >
         COMMUNITY
       </h2>
       <img
         alt="Plus Icon"
-        class="w-12"
+        class="w-4 md:w-6 lg:w-8"
         src="/src/assets/plus-icon.png"
       />
     </div>
