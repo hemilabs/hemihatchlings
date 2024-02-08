@@ -3,14 +3,14 @@
 exports[`src/presentation/Main > renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col"
+    class="flex flex-col container"
   >
-    <div
-      class="flex flex-row w-full justify-center items-center h-36 gap-x-8"
+    <header
+      class="flex flex-row w-full justify-center items-center h-24 gap-x-8 sm:h-28 lg:h-32"
     >
       <div>
         <h1
-          class="font-poller text-white text-2xl"
+          class="font-poller text-white text-lg sm:text-xl lg:text-2xl"
         >
           BB
         </h1>
@@ -20,7 +20,7 @@ exports[`src/presentation/Main > renders correctly 1`] = `
       />
       <div>
         <ul
-          class="font-monaco text-white text-2xl text-right"
+          class="font-monaco text-white text-sm text-right sm:text-lg lg:text-xl"
         >
           <a
             class="hover:text-gray-400"
@@ -48,67 +48,120 @@ exports[`src/presentation/Main > renders correctly 1`] = `
           </a>
         </ul>
       </div>
-    </div>
+    </header>
     <div
-      class="flex flex-col justify-center items-center h-36"
-    >
-      <img
-        alt="logo"
-        class=""
-        src="/src/assets/logo.svg"
-      />
-      <h2
-        class="font-poller text-white text-3xl mt-8"
-      >
-        Learn how Ethereum & Bitcoin Finality Works.
-      </h2>
-    </div>
-    <div
-      class="mt-12"
+      class="mt-4 sm:mt-8 lg:mt-12"
     >
       <div
-        class="flex flex-row justify-center gap-16"
+        class="flex flex-col justify-center items-center h-24"
       >
-        <div
-          class="p-8 border border-white bg-fire-yellow"
+        <img
+          alt="logo"
+          class=""
+          src="/src/assets/logo.svg"
+        />
+        <h2
+          class="font-poller text-white text-center text-xs mt-4 sm:text-lg md:text-xl lg:text-3xl"
+        >
+          Learn how Ethereum & Bitcoin Finality Works.
+        </h2>
+      </div>
+    </div>
+    <div
+      class="mt-4 sm:mt-8 lg:mt-20"
+    >
+      <div
+        class="flex flex-row justify-center gap-4 lg:gap-12"
+      >
+        <button
+          class="disabled:opacity-50 lg:hidden"
+          disabled=""
         >
           <img
-            alt="Fire Egg"
-            class=""
-            src="/src/assets/fire-egg.png"
+            alt="Go Left"
+            class="w-8 rotate-180"
+            src="/src/assets/chevron.svg"
           />
+        </button>
+        <div
+          class=""
+        >
+          <button>
+            <div
+              class="p-8 border border-white bg-fire-yellow"
+            >
+              <img
+                alt="Fire Egg"
+                src="/src/assets/fire-egg.png"
+              />
+            </div>
+            <div
+              class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
+            >
+              01
+            </div>
+          </button>
         </div>
         <div
-          class="p-8 border border-white bg-water-blue"
+          class="hidden lg:block"
         >
-          <img
-            alt="Water Egg"
-            class=""
-            src="/src/assets/water-egg.png"
-          />
+          <button>
+            <div
+              class="p-8 border border-white bg-water-blue"
+            >
+              <img
+                alt="Water Egg"
+                src="/src/assets/water-egg.png"
+              />
+            </div>
+            <div
+              class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
+            >
+              02
+            </div>
+          </button>
         </div>
         <div
-          class="p-8 border border-white bg-grass-green"
+          class="hidden lg:block"
+        >
+          <button>
+            <div
+              class="p-8 border border-white bg-grass-green"
+            >
+              <img
+                alt="Grass Egg"
+                src="/src/assets/grass-egg.png"
+              />
+            </div>
+            <div
+              class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
+            >
+              03
+            </div>
+          </button>
+        </div>
+        <button
+          class="disabled:opacity-50 lg:hidden"
         >
           <img
-            alt="Grass Egg"
-            class=""
-            src="/src/assets/grass-egg.png"
+            alt="Go Right"
+            class="w-8"
+            src="/src/assets/chevron.svg"
           />
-        </div>
+        </button>
       </div>
       <div
-        class="flex flex-col items-center mt-8"
+        class="flex flex-col items-center"
       >
         <h2
-          class="font-monaco font-normal text-white text-4xl mt-8"
+          class="font-monaco font-normal text-white text-lg mt-8 sm:text-xl md:text-2xl lg:text-3xl lg:mt-12 xl:text-4xl"
         >
           FREE MINT + GAS FEES
         </h2>
       </div>
     </div>
     <div
-      class="mt-12"
+      class="mt-8 sm:mt-8 mb-8 lg:mt-16"
     >
       <div
         class="flex flex-col items-center gap-8"
@@ -120,18 +173,18 @@ exports[`src/presentation/Main > renders correctly 1`] = `
             class="flex flex-row justify-between w-full"
           >
             <h2
-              class="font-space font-bold text-white text-5xl hover:text-gray-400"
+              class="font-space font-bold text-white text-lg hover:text-gray-400 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
             >
               HOW IT WORKS
             </h2>
             <img
               alt="Minus Icon"
-              class="w-12"
+              class="w-4 md:w-6 lg:w-8"
               src="/src/assets/minus-icon.png"
             />
           </div>
           <div
-            class="font-space font-light text-white text-3xl mt-8"
+            class="font-space font-light text-white text-sm mt-4 sm:text-base md:text-lg lg:text-xl"
           >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel fringilla est ullamcorper eget nulla facilisi.
@@ -150,13 +203,13 @@ exports[`src/presentation/Main > renders correctly 1`] = `
           class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
         >
           <h2
-            class="font-space font-normal text-white text-4xl"
+            class="font-space font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
           >
             ADD A FEATURE
           </h2>
           <img
             alt="Plus Icon"
-            class="w-12"
+            class="w-4 md:w-6 lg:w-8"
             src="/src/assets/plus-icon.png"
           />
         </div>
@@ -164,13 +217,13 @@ exports[`src/presentation/Main > renders correctly 1`] = `
           class="flex flex-row justify-between w-full max-w-screen-xl items-center p-8 border border-white"
         >
           <h2
-            class="font-space font-normal text-white text-4xl"
+            class="font-space font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"
           >
             COMMUNITY
           </h2>
           <img
             alt="Plus Icon"
-            class="w-12"
+            class="w-4 md:w-6 lg:w-8"
             src="/src/assets/plus-icon.png"
           />
         </div>
