@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidTransactionStatusError } from '../errors/InvalidTransactionStatusError'
 import { TransactionStatus } from './TransactionStatus'
 import { TransactionStatusEnum } from '../enums/TransactionStatusEnum'

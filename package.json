@@ -1,5 +1,5 @@
 {
-  "name": "bitbeasties",
+  "name": "hemihatchlings",
   "private": true,
   "scripts": {
     "build": "turbo build",

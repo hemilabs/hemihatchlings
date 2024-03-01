@@ -1,4 +1,4 @@
-import { DomainError } from '@bitbeasties/shared'
+import { DomainError } from '@hemihatchlings/shared'
 import { Response } from 'express'
 
 export const handleError = (error: any, res: Response): Response => {

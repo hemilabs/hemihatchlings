@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { DomainError } from '@bitbeasties/shared'
+import { DomainError } from '@hemihatchlings/shared'
 import { InvalidTransactionHashError } from './InvalidTransactionHashError'
 
 describe('src/domain/errors/InvalidTransactionHashError', () => {

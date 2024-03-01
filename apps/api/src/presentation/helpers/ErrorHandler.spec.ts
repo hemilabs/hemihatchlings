@@ -1,6 +1,6 @@
 import { expect, describe, it, vi } from 'vitest'
 import { handleError } from './ErrorHandler'
-import { DomainError } from '@bitbeasties/shared'
+import { DomainError } from '@hemihatchlings/shared'
 
 describe('src/presentation/helpers/ErrorHandler', () => {
   it('should be defined', () => {

@@ -1,4 +1,4 @@
-import { Uuid } from '@bitbeasties/shared'
+import { Uuid } from '@hemihatchlings/shared'
 import { Beastie } from '../entities/Beastie'
 import { Address } from '../valueObjects/Address'
 import { TransactionHash } from '../valueObjects/TransactionHash'

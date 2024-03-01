@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -20,10 +20,9 @@ contract NFTCollection is ERC721Enumerable, Ownable {
 
     string public baseTokenURI;
 
-    constructor(string memory baseURI, string memory name, string memory symbol) ERC721(name, symbol) {
+    constructor(string memory baseURI, string memory name, string memory symbol) ERC721(name, symbol) Ownable(msg.sender) {
         setBaseURI(baseURI);
     }
-
 
     function _baseURI() internal view virtual override returns (string memory) {
         return baseTokenURI;
