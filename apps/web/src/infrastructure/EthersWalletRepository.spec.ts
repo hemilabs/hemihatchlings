@@ -11,6 +11,11 @@ vi.mock('ethers', async () => {
         getSigner: vi.fn().mockResolvedValue({
           address: '0x52908400098527886E0F7030069857D2E4169EE7'
         })
+      }),
+      Contract: vi.fn().mockReturnValue({
+        mintNFTs: vi.fn().mockResolvedValue({
+          hash: '0xa07FA473B87D7ADee161f458aF300255B65F33f6'
+        })
       })
     }
   }
@@ -111,6 +116,27 @@ describe('src/infrastructure/EthersWalletRepository', () => {
         'wallet_addEthereumChain',
         [ repository['chainData'] ]
       )
+    })
+  })
+
+  describe('mintNFT', () => {
+    const repository = new EthersWalletRepository()
+    let result: string
+
+    beforeAll(async () => {
+      await repository.connect()
+      result = await repository.mintNFT()
+    })
+
+    it('should call contract mintNFTs method with the right params', () => {
+      expect(repository['contract']?.mintNFTs)
+        .toHaveBeenCalledWith(1)
+    })
+
+    it('should return the minted NFT transaction hash', () => {
+      const expectedHash = '0xa07FA473B87D7ADee161f458aF300255B65F33f6'
+      
+      expect(result).toBe(expectedHash)
     })
   })
 })

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { Entity, Uuid } from '@bitbeasties/shared'
+import { Entity, Uuid } from '@hemihatchlings/shared'
 import { Beastie } from './Beastie'
 import { Address } from '../valueObjects/Address'
 import { TransactionHash } from '../valueObjects/TransactionHash'

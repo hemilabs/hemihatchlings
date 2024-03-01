@@ -8,7 +8,12 @@ import { servicesContext } from '../context'
 function Eggs(): JSX.Element {
   const [active, setActive] = useState(0)
   const [address, setAddress] = useState('')
-  const { connectWalletService } = useContext(servicesContext)
+  const [transactionHash, setTransactionHash] = useState('')
+
+  const {
+    connectWalletService,
+    mintNFTService
+  } = useContext(servicesContext)
 
   const goPrevious = () => {
     setActive(active - 1)
@@ -22,7 +27,17 @@ function Eggs(): JSX.Element {
     const response = await connectWalletService.execute()
 
     setAddress(response.address)
-    console.log(address)
+  }
+
+  const mintNFT = async () => {
+    const response = await mintNFTService.execute()
+
+    setTransactionHash(response.transactionHash)
+  }
+
+  const createHatchling = async () => {
+    await connectWallet()
+    await mintNFT()
   }
 
   return (
@@ -36,7 +51,7 @@ function Eggs(): JSX.Element {
       </button>
 
       <div className={active === 0 ? '' : 'hidden'}>
-        <button onClick={connectWallet}>
+        <button onClick={createHatchling}>
           <div className="p-8 border border-white bg-fire-yellow">
             <img src={fireEgg} alt="Fire Egg" />
           </div>
@@ -48,7 +63,7 @@ function Eggs(): JSX.Element {
       </div>
 
       <div className={`${active === 1 ? '' : 'hidden'} lg:block`}>
-        <button onClick={connectWallet}>
+        <button onClick={createHatchling}>
           <div className="p-8 border border-white bg-water-blue">
             <img src={waterEgg} alt="Water Egg" />
           </div>
@@ -60,7 +75,7 @@ function Eggs(): JSX.Element {
       </div>
 
       <div className={`${active === 2 ? '' : 'hidden'} lg:block`}>
-        <button onClick={connectWallet}>
+        <button onClick={createHatchling}>
           <div className="p-8 border border-white bg-grass-green">
             <img src={grassEgg} alt="Grass Egg" />
           </div>

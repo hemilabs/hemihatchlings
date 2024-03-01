@@ -1,4 +1,4 @@
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidTransactionStatusError } from '../errors/InvalidTransactionStatusError'
 import { TransactionStatusEnum } from '../enums/TransactionStatusEnum'
 

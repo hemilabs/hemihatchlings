@@ -22,18 +22,18 @@ export class ExpressServer {
 
   start(): void {
     this.server = this.app.listen(this.port, () => {
-      console.info(`Bit Beasties API | Listening on Port ${this.port}`)
+      console.info(`Hemi Hatchlings API | Listening on Port ${this.port}`)
     })
   }
 
   async stop(): Promise<void> {
-    console.info('Bit Beasties API | Closing HTTP Server')
+    console.info('Hemi Hatchlings API | Closing HTTP Server')
 
     return await new Promise((resolve, reject) => {
       this.server?.close((error) => {
         if (error) {
           console.error(
-            `Bit Beasties API | Error Closing HTTP Server: ${error.message}`)
+            `Hemi Hatchlings API | Error Closing HTTP Server: ${error.message}`)
           reject(error)
         } else {
           resolve()

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidAddressError } from '../errors/InvalidAddressError'
 import { Address } from './Address'
 

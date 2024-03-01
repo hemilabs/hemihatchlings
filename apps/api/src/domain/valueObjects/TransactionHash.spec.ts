@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidTransactionHashError } from '../errors/InvalidTransactionHashError'
 import { TransactionHash } from './TransactionHash'
 

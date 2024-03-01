@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidStageError } from '../errors/InvalidStageError'
 import { Stage } from './Stage'
 import { StageEnum } from '../enums/StageEnum'

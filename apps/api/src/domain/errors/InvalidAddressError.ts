@@ -1,4 +1,4 @@
-import { DomainError } from '@bitbeasties/shared'
+import { DomainError } from '@hemihatchlings/shared'
 
 export class InvalidAddressError extends DomainError {
   constructor() {

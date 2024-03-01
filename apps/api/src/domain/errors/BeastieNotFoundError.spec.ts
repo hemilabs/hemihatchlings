@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { DomainError } from '@bitbeasties/shared'
+import { DomainError } from '@hemihatchlings/shared'
 import { BeastieNotFoundError } from './BeastieNotFoundError'
 
 describe('src/domain/errors/BeastieNotFoundError', () => {

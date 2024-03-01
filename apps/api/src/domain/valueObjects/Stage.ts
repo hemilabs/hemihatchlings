@@ -1,4 +1,4 @@
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidStageError } from '../errors/InvalidStageError'
 import { StageEnum } from '../enums/StageEnum'
 

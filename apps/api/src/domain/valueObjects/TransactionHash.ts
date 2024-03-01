@@ -1,4 +1,4 @@
-import { ValueObject } from '@bitbeasties/shared'
+import { ValueObject } from '@hemihatchlings/shared'
 import { InvalidTransactionHashError } from '../errors/InvalidTransactionHashError'
 
 interface TransactionHashProps {
