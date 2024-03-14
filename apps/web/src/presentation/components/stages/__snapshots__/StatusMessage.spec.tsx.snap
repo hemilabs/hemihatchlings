@@ -1,0 +1,20 @@
+// Vitest Snapshot v1
+
+exports[`src/presentation/StatusMessage > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="
+        font-monaco text-sm text-white mt-2 text-center uppercase
+        sm:text-base md:text-lg md:mt-4"
+  >
+    Approaching ETHEREUM Finality
+  </div>
+  <div
+    class="hidden
+        font-monaco text-sm text-white mt-2 text-center uppercase
+        sm:text-base md:text-lg md:mt-4"
+  >
+    ethereum & bitcoin finality achieved
+  </div>
+</DocumentFragment>
+`;

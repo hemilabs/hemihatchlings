@@ -1,7 +1,6 @@
-import React from 'react'
 import Header from './Header'
 import Hero from './Hero'
-import Eggs from './Eggs'
+import Stages from './stages/Main'
 import Faq from './Faq'
 
 function Main(): JSX.Element {
@@ -12,7 +11,7 @@ function Main(): JSX.Element {
         <Hero />
       </div>
       <div className="mt-4 sm:mt-8 lg:mt-20">
-        <Eggs />
+        <Stages />
       </div>
       <div className="mt-8 sm:mt-8 mb-8 lg:mt-16">
         <Faq />

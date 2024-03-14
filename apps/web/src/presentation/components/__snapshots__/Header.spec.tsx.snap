@@ -9,7 +9,7 @@ exports[`src/presentation/Header > renders correctly 1`] = `
       <h1
         class="font-poller text-white text-lg sm:text-xl lg:text-2xl"
       >
-        BB
+        HH
       </h1>
     </div>
     <div
@@ -21,7 +21,8 @@ exports[`src/presentation/Header > renders correctly 1`] = `
       >
         <a
           class="hover:text-gray-400"
-          href="#"
+          href="https://github.com/hemilabs"
+          target="_blank"
         >
           <li>
             GITHUB
@@ -29,7 +30,8 @@ exports[`src/presentation/Header > renders correctly 1`] = `
         </a>
         <a
           class="hover:text-gray-400"
-          href="#"
+          href="https://discord.gg/RyhaPp7NvQ"
+          target="_blank"
         >
           <li>
             COMMUNITY
@@ -37,7 +39,8 @@ exports[`src/presentation/Header > renders correctly 1`] = `
         </a>
         <a
           class="hover:text-gray-400"
-          href="#"
+          href="https://twitter.com/hemi_xyz/"
+          target="_blank"
         >
           <li>
             TWITTER

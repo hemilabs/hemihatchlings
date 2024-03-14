@@ -12,7 +12,9 @@ module.exports = {
       colors: {
         'fire-yellow': '#FFBA0A',
         'water-blue': '#5451FF',
-        'grass-green': '#37683C'
+        'grass-green': '#37683C',
+        'orange': '#DEAC87',
+        'dark-orange': '#1E1616'
       },
       minWidth: {
         '128': '32rem'

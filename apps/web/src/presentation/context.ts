@@ -1,23 +1,23 @@
 import React from 'react'
 import {
-  AxiosBeastieRepository
-} from '../infrastructure/AxiosBeastieRepository'
-import { GetBeastieService } from '../application/GetBeastie/GetBeastieService'
+  AxiosHatchlingRepository
+} from '../infrastructure/AxiosHatchlingRepository'
+import { GetHatchlingStageService } from '../application/GetHatchlingStage/GetHatchlingStageService'
 import { ConnectWalletService } from '../application/ConnectWallet/ConnectWalletService'
 import { EthersWalletRepository } from '../infrastructure/EthersWalletRepository'
 import { MintNFTService } from '../application/MintNFT/MintNFTService'
 
 export interface ServicesContext {
-  getBeastieService: GetBeastieService,
+  getHatchlingStageService: GetHatchlingStageService,
   connectWalletService: ConnectWalletService
   mintNFTService: MintNFTService
 }
 
-const beastieRepository = new AxiosBeastieRepository()
+const hatchlingRepository = new AxiosHatchlingRepository()
 const walletRepository = new EthersWalletRepository()
 
-const getBeastieService =
-  new GetBeastieService(beastieRepository)
+const getHatchlingStageService =
+  new GetHatchlingStageService(hatchlingRepository)
 const connectWalletService =
   new ConnectWalletService(walletRepository)
 const mintNFTService =
@@ -25,7 +25,7 @@ const mintNFTService =
 
 
 export const defaultValue = {
-  getBeastieService,
+  getHatchlingStageService,
   connectWalletService,
   mintNFTService
 }

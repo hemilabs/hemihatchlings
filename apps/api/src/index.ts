@@ -1,19 +1,19 @@
-import { Web3BeastieRepository } from './infrastructure/repositories/Web3BeastieRepository'
-import { GetBeastieService } from './application/GetBeastie/GetBeastieService'
-import { GetBeastieRoute } from './presentation/routes/GetBeastieRoute'
+import { GetHatchlingStageService } from './application/GetHatchlingStage/GetHatchlingStageService'
+import { Web3HatchlingRepository } from './infrastructure/repositories/Web3HatchlingRepository'
 import { ExpressServer } from './presentation/ExpressServer'
+import { GetHatchlingStageRoute } from './presentation/routes/GetHatchlingStageRoute'
 
 // Repositories
-const beastieRepository = new Web3BeastieRepository()
+const hatchlingRepository = new Web3HatchlingRepository()
 
 // Services
-const getBeastieService = new GetBeastieService(beastieRepository)
+const getHatchlingService = new GetHatchlingStageService(hatchlingRepository)
 
 // Routes
-const getBeastieRoute = new GetBeastieRoute(getBeastieService)
+const getHatchlingRoute = new GetHatchlingStageRoute(getHatchlingService)
 
 const server = new ExpressServer([
-  getBeastieRoute.router
+  getHatchlingRoute.router
 ])
 
 const startServer = async (): Promise<void> => {
