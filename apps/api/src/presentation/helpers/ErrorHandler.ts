@@ -8,7 +8,7 @@ export const handleError = (error: any, res: Response): Response => {
     })
   }
 
-  console.dir(error)
+  console.error(error)
 
   return res.status(500).send({
     code: 'INTERNAL_SERVER_ERROR'

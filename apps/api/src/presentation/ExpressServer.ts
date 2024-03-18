@@ -1,9 +1,11 @@
 /* eslint-disable no-console */
 import express, { Express, Router } from 'express'
-import { json } from 'body-parser'
 import helmet from 'helmet'
 import cors from 'cors'
 import { Server } from 'http'
+import bodyParser from 'body-parser'
+
+const { json } = bodyParser
 
 export class ExpressServer {
   app: Express

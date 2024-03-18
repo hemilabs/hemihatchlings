@@ -1,4 +1,3 @@
-import React from 'react'
 import plus from '../../assets/plus-icon.png'
 import minus from '../../assets/minus-icon.png'
 

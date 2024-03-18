@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeAll } from 'vitest'
+import { describe, it, expect } from 'vitest'
 import { WalletNotConnectedError } from './WalletNotConnectedError'
 
 describe('src/domain/errors/WalletNotConnectedError', () => {

@@ -4,11 +4,12 @@
   "description": "API for hemihatchlings application",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "private": true,
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json",
-    "dev": "yarn build && nodemon",
-    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "start": "node --experimental-specifier-resolution=node dist/index.js",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "test": "vitest run",
@@ -42,6 +43,7 @@
     "eslint-plugin-sonarjs": "^0.15.0",
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
+    "tsx": "^4.7.1",
     "vitest": "^0.23.1"
   }
 }

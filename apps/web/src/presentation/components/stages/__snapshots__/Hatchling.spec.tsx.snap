@@ -1,0 +1,83 @@
+// Vitest Snapshot v1
+
+exports[`src/presentation/Hatchling > renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row justify-center"
+  >
+    <div
+      class="flex flex-col"
+    >
+      <div
+        class="blur
+          border w-96 items-center"
+      >
+        <img
+          alt="Fire Baby"
+          class=""
+          src="/src/assets/fire-baby.png"
+        />
+        <img
+          alt="Water Baby"
+          class="hidden"
+          src="/src/assets/water-baby.png"
+        />
+        <img
+          alt="Grass Baby"
+          class="hidden"
+          src="/src/assets/grass-baby.png"
+        />
+        <img
+          alt="Air Baby"
+          class="hidden"
+          src="/src/assets/air-baby.png"
+        />
+      </div>
+      <div
+        class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
+      >
+        🔄 HATCHING STAGE 1
+      </div>
+    </div>
+    <div
+      class="flex flex-col"
+    >
+      <div
+        class="blur
+          border w-96 items-center"
+      >
+        <img
+          alt="Fire Adult"
+          class=""
+          src="/src/assets/fire-adult.png"
+        />
+        <img
+          alt="Water Adult"
+          class="hidden"
+          src="/src/assets/water-adult.png"
+        />
+        <img
+          alt="Grass Adult"
+          class="hidden"
+          src="/src/assets/grass-adult.png"
+        />
+        <img
+          alt="Air Adult"
+          class="hidden"
+          src="/src/assets/air-adult.png"
+        />
+      </div>
+      <div
+        class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
+      >
+        🔄 HATCHING STAGE 2
+      </div>
+    </div>
+    <img
+      alt="Lock Icon"
+      class="absolute m-auto top-0 bottom-0 left-0 right-0"
+      src="/src/assets/lock-icon.png"
+    />
+  </div>
+</DocumentFragment>
+`;

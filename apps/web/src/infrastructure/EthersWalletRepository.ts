@@ -22,7 +22,6 @@ export class EthersWalletRepository implements WalletRepository {
   private contract: Contract | undefined
 
   constructor() {
-    console.error(import.meta.env.VITE_CHAIN_ID)
     this.chainData = {
       chainId: import.meta.env.VITE_CHAIN_ID,
       chainName: import.meta.env.VITE_CHAIN_NAME,

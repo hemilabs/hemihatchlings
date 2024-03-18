@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.10",
+    "@hemihatchlings/shared": "*",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.17",
@@ -40,6 +41,7 @@
     "ts-node": "^10.9.1",
     "typescript": "*",
     "vite": "^3.0.7",
+    "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^0.23.1"
   }
 }
