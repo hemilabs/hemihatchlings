@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hemihatchlings-api
+  labels:
+    app: hemihatchlings-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hemihatchlings-api
+  template:
+    metadata:
+      labels:
+        app: hemihatchlings-api
+    spec:
+      containers:
+      - name: hemihatchlings-api
+        image: hemilabs/hemihatchlings-api:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: dockerhub-secret
