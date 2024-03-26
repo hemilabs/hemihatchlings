@@ -1,4 +1,5 @@
-import { BrowserProvider, Contract, ethers } from 'ethers'
+import { ElementEnum, TransactionHash } from '@hemihatchlings/shared'
+import { BrowserProvider, Contract, JsonRpcSigner, ethers } from 'ethers'
 import { WalletRepository } from '../domain/repositories/WalletRepository'
 import { Wallet } from '../domain/entities/Wallet'
 import ABI from './ContractABI'
@@ -15,11 +16,15 @@ interface ChainData {
   }
 }
 
+type ContractAddress = {
+  [key in ElementEnum]: string
+}
+
 export class EthersWalletRepository implements WalletRepository {
   private provider: BrowserProvider | undefined
   private chainData: ChainData
-  private contractAddress: string
-  private contract: Contract | undefined
+  private contractAddress: ContractAddress
+  private signer: JsonRpcSigner | undefined
 
   constructor() {
     this.chainData = {
@@ -34,7 +39,12 @@ export class EthersWalletRepository implements WalletRepository {
       }
     }
 
-    this.contractAddress = import.meta.env.VITE_SMART_CONTRACT_ADDRESS
+    this.contractAddress = {
+      [ElementEnum.Fire]: import.meta.env.VITE_FIRE_SMART_CONTRACT_ADDRESS,
+      [ElementEnum.Water]: import.meta.env.VITE_WATER_SMART_CONTRACT_ADDRESS,
+      [ElementEnum.Grass]: import.meta.env.VITE_GRASS_SMART_CONTRACT_ADDRESS,
+      [ElementEnum.Air]: import.meta.env.VITE_AIR_SMART_CONTRACT_ADDRESS
+    }
   }
 
   exists(): boolean {
@@ -43,19 +53,19 @@ export class EthersWalletRepository implements WalletRepository {
   }
 
   isConnected(): boolean {
-    return this.provider != null &&
-          this.contract !== null
+    return this.provider != null
   }
 
   async connect(): Promise<Wallet> {
     // @ts-ignore
     this.provider = new ethers.BrowserProvider(window.ethereum)
 
-    await this.provider?.send('eth_requestAccounts', []);
-    const signer =  await this.provider.getSigner()
-    const { address } = signer
+    await this.provider?.send('eth_requestAccounts', [])
 
-    this.contract = new ethers.Contract(this.contractAddress, ABI, signer);
+    this.signer =  await this.provider.getSigner()
+    const { address } = this.signer
+
+
 
     return { address }
   }
@@ -74,9 +84,12 @@ export class EthersWalletRepository implements WalletRepository {
     )
   }
 
-  async mintNFT(): Promise<string> {
-    const { hash } = await this.contract?.mintNFTs(1)
+  async mintNFT(element: ElementEnum): Promise<TransactionHash> {
+    const contractAddress = this.contractAddress[element]
+    const contract = new ethers.Contract(contractAddress, ABI, this.signer)
 
-    return hash
+    const { hash } = await contract.mintNFTs(1)
+
+    return TransactionHash.create(hash)
   }
 }

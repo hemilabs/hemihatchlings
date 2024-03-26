@@ -1,8 +1,9 @@
 import axios, { AxiosInstance } from 'axios'
 import { HatchlingRepository } from '../domain/repositories/HatchlingRepository'
-import { Stage, TransactionHash } from '@hemihatchlings/shared'
+import { Hatchling, HatchlingFactory, Stage, TransactionHash } from '@hemihatchlings/shared'
 
 export class AxiosHatchlingRepository implements HatchlingRepository {
+  private storageKey = 'hatchling'
   private readonly api: AxiosInstance
 
   constructor() {
@@ -12,17 +13,47 @@ export class AxiosHatchlingRepository implements HatchlingRepository {
     })
   }
 
-  async getStage(transactionHash: TransactionHash): Promise<Stage | null> {
-    const response = await this.api.get(
-      `/hatchling/${transactionHash.value}/stage`
-    )
+  create(hatchling: Hatchling): void {
+    const { account, transactionHash, stage, element } = hatchling
 
-    const { stage } = response.data
-    
-    if (stage == null) {
+    localStorage.setItem(
+      this.storageKey,
+      JSON.stringify({
+        account: account.value,
+        transactionHash: transactionHash.value,
+        stage: stage.value,
+        element: element?.value
+      })
+    )
+  }
+
+  async find(): Promise<Hatchling | null> {
+    const localHatchling = localStorage.getItem(this.storageKey)
+
+    if(!localHatchling) {
       return null
     }
 
-    return Stage.create(stage)
+    let {
+      account,
+      transactionHash,
+      stage,
+      element
+    } = JSON.parse(localHatchling)
+
+    const response = await this.api.get(
+      `/hatchling/${transactionHash}/stage`
+    )
+
+    if (response.data.stage != null) {
+      stage = response.data.stage
+    }
+
+    return HatchlingFactory.createWithStage({
+      account,
+      transactionHash,
+      element,
+      stage
+    })
   }
 }

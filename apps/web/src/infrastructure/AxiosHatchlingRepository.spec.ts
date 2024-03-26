@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { describe, it, expect, vi, beforeAll } from 'vitest'
 import { AxiosHatchlingRepository } from './AxiosHatchlingRepository'
-import { Stage, TransactionHash } from '@hemihatchlings/shared'
+import { Hatchling, TransactionHash } from '@hemihatchlings/shared'
 
 describe('src/infrastructure/AxiosHatchlingRepository', () => {
   it('should be defined', () => {
@@ -22,26 +22,54 @@ describe('src/infrastructure/AxiosHatchlingRepository', () => {
     })
   })
 
-  describe('getStage', () => {
-    const transactionHash = TransactionHash
-      .create('0x7304dc174aab2bc487b1befb9e35ba3632b9693f0c0548e138b4401f263910f1')
-    const stage = 'baby'
+  describe('find', () => {
+    const account = '0x52908400098527886E0F7030069857D2E4169EE7'
+    const transactionHash = '0x7304dc174aab2bc487b1befb9e35ba3632b9693f0c0548e138b4401f263910f1'
+    const stage = 'Baby'
+    const element = 'Fire'
 
-    let result: Stage | null
+    let result: Hatchling | null
    
-    const expectedResponse = { stage }
+    const getStageResponse = { stage }
+
+    describe('when there is no hatchling on local storage', () => {
+      const axiosHatchlingRepository = new AxiosHatchlingRepository()
+
+      beforeAll(async () => {
+        // @ts-ignore
+        window.localStorage = {
+          getItem: vi.fn().mockReturnValue(null)
+        }
+        
+        result = await axiosHatchlingRepository.find()
+      })
+
+      it('should return null', async () => {
+        expect(result).toBeNull()
+      })
+    })
 
     describe('when the hatchling stage was found with success', () => {
       const getMock = vi.fn(() => ({
-        data: expectedResponse
+        data: getStageResponse
       }))
 
       beforeAll(async () => {
-        // @ts-expect-error
+        // @ts-ignore
+        window.localStorage = {
+          getItem: vi.fn().mockReturnValue(JSON.stringify({
+            account,
+            transactionHash,
+            stage,
+            element
+          })) 
+        }
+
+        // @ts-ignore
         axios.create = vi.fn(() => ({ get: getMock }))
         const axiosHatchlingRepository = new AxiosHatchlingRepository()
 
-        result = await axiosHatchlingRepository.getStage(transactionHash)
+        result = await axiosHatchlingRepository.find()
       })
 
       it('should call api.get with the right params', async () => {
@@ -50,8 +78,8 @@ describe('src/infrastructure/AxiosHatchlingRepository', () => {
         )
       })
 
-      it('should return the expected stage', async () => {
-        expect(result).toStrictEqual(expectedResponse)
+      it('should return the hatchling', async () => {
+        expect(result).toBeInstanceOf(Hatchling)
       })
     })
 
@@ -65,7 +93,7 @@ describe('src/infrastructure/AxiosHatchlingRepository', () => {
 
       it('should call api.get with the right params', async () => {
         try {
-          await axiosHatchlingRepository.getStage(transactionHash)
+          await axiosHatchlingRepository.find()
         } catch (error) {
           expect(getMock).toHaveBeenCalledWith(
             `/hatchling/${transactionHash}/stage`,
@@ -74,7 +102,7 @@ describe('src/infrastructure/AxiosHatchlingRepository', () => {
       })
 
       it('should throw the error', async () => {
-        await expect(axiosHatchlingRepository.getStage(transactionHash))
+        await expect(axiosHatchlingRepository.find())
           .rejects.toStrictEqual(getHatchlingStageError)
       })
     })

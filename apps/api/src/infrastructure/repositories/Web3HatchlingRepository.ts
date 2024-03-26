@@ -36,7 +36,7 @@ export class Web3HatchlingRepository implements HatchlingRepository {
       transactionStatus = TransactionStatusEnum.BtcFinality
     }
 
-    const hatchling = HatchlingFactory.create({
+    const hatchling = HatchlingFactory.createWithStatus({
       account: transaction.from,
       transactionHash: transaction.hash,
       transactionStatus
@@ -61,7 +61,6 @@ export class Web3HatchlingRepository implements HatchlingRepository {
 
     const diffInMinutes = (now.getTime() - blockDate.getTime()) / 60000
 
-    console.log(`diffInMinutes: ${diffInMinutes}`)
     return diffInMinutes > 100
   }
 }
