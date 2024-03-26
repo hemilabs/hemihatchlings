@@ -1,0 +1,4 @@
+resources:
+  - hemihatchlings-api-deployment.yaml
+  - hemihatchlings-api-service.yaml
+  - hemihatchlings-api-ingress.yaml
