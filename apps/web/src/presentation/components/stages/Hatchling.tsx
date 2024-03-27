@@ -66,7 +66,8 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
 
       <img src={lockIcon}
           alt="Lock Icon"
-          className='absolute m-auto top-0 bottom-0 left-0 right-0' />
+          className={`${isAdult() ? 'hidden' : ''}
+            absolute m-auto top-0 bottom-0 left-0 right-0`}/>
 
     </div>
     

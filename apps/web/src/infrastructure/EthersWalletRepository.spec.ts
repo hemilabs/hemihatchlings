@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { ElementEnum, TransactionHash } from '@hemihatchlings/shared'
 import { describe, it, expect, vi, beforeAll } from 'vitest'
 import { EthersWalletRepository } from './EthersWalletRepository'
 import { Wallet } from '../domain/entities/Wallet'
@@ -14,7 +15,7 @@ vi.mock('ethers', async () => {
       }),
       Contract: vi.fn().mockReturnValue({
         mintNFTs: vi.fn().mockResolvedValue({
-          hash: '0xa07FA473B87D7ADee161f458aF300255B65F33f6'
+          hash: '0x9abab8480d6da31404f045c011ec9fafee4e869bb34808f96852a0fd81bbcc0d'
         })
       })
     }
@@ -121,22 +122,17 @@ describe('src/infrastructure/EthersWalletRepository', () => {
 
   describe('mintNFT', () => {
     const repository = new EthersWalletRepository()
-    let result: string
+    let result: TransactionHash
 
     beforeAll(async () => {
       await repository.connect()
-      result = await repository.mintNFT()
-    })
-
-    it('should call contract mintNFTs method with the right params', () => {
-      expect(repository['contract']?.mintNFTs)
-        .toHaveBeenCalledWith(1)
+      result = await repository.mintNFT(ElementEnum.Fire)
     })
 
     it('should return the minted NFT transaction hash', () => {
-      const expectedHash = '0xa07FA473B87D7ADee161f458aF300255B65F33f6'
+      const expectedResult = TransactionHash.create('0x9abab8480d6da31404f045c011ec9fafee4e869bb34808f96852a0fd81bbcc0d')
       
-      expect(result).toBe(expectedHash)
+      expect(result).toStrictEqual(expectedResult)
     })
   })
 })

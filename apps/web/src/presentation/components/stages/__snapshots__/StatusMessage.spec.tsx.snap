@@ -3,6 +3,16 @@
 exports[`src/presentation/StatusMessage > renders correctly 1`] = `
 <DocumentFragment>
   <div
+    class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
+  >
+    <div>
+      Wallet: 0x52908400098527886E0F7030069857D2E4169EE7
+    </div>
+    <div>
+      Transaction: 0x7304dc174aab2bc487b1befb9e35ba3632b9693f0c0548e138b4401f263910f1
+    </div>
+  </div>
+  <div
     class="
         font-monaco text-sm text-white mt-2 text-center uppercase
         sm:text-base md:text-lg md:mt-4"

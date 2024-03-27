@@ -2,32 +2,26 @@ import React from 'react'
 import {
   AxiosHatchlingRepository
 } from '../infrastructure/AxiosHatchlingRepository'
-import { GetHatchlingStageService } from '../application/GetHatchlingStage/GetHatchlingStageService'
-import { ConnectWalletService } from '../application/ConnectWallet/ConnectWalletService'
+import { FindHatchlingService } from '../application/FindHatchling/FindHatchlingService'
+import { CreateHatchlingService } from '../application/CreateHatchling/CreateHatchlingService'
 import { EthersWalletRepository } from '../infrastructure/EthersWalletRepository'
-import { MintNFTService } from '../application/MintNFT/MintNFTService'
 
 export interface ServicesContext {
-  getHatchlingStageService: GetHatchlingStageService,
-  connectWalletService: ConnectWalletService
-  mintNFTService: MintNFTService
+  findHatchlingService: FindHatchlingService,
+  createHatchlingService: CreateHatchlingService
 }
 
 const hatchlingRepository = new AxiosHatchlingRepository()
 const walletRepository = new EthersWalletRepository()
 
-const getHatchlingStageService =
-  new GetHatchlingStageService(hatchlingRepository)
-const connectWalletService =
-  new ConnectWalletService(walletRepository)
-const mintNFTService =
-  new MintNFTService(walletRepository)
-
+const findHatchlingService =
+  new FindHatchlingService(hatchlingRepository)
+const createHatchlingService =
+  new CreateHatchlingService(walletRepository, hatchlingRepository)
 
 export const defaultValue = {
-  getHatchlingStageService,
-  connectWalletService,
-  mintNFTService
+  findHatchlingService,
+  createHatchlingService
 }
 
 export const servicesContext =

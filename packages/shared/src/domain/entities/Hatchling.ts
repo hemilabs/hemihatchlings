@@ -16,10 +16,17 @@ interface HatchlingProps {
   element?: Element
 }
 
-interface CreateProps {
+interface CreateWithStatusProps {
   account: Address
   transactionHash: TransactionHash
   transactionStatus: TransactionStatus
+  element?: Element
+}
+
+interface CreateWithStageProps {
+  account: Address
+  transactionHash: TransactionHash
+  stage: Stage
   element?: Element
 }
 
@@ -28,11 +35,18 @@ export class Hatchling extends Entity<HatchlingProps> {
     super(props, id)
   }
 
-  static create(props: CreateProps, id?: Uuid): Hatchling {
+  static createWithStatus(props: CreateWithStatusProps, id?: Uuid): Hatchling {
     const hatchlingId = id ?? Uuid.create()
     const stage = this.getStageFromStatus(props.transactionStatus)
 
     return new Hatchling({ ...props, stage }, hatchlingId)
+  }
+
+  static createWithStage(props: CreateWithStageProps, id?: Uuid): Hatchling {
+    const hatchlingId = id ?? Uuid.create()
+    const transactionStatus = this.getStatusFromStage(props.stage)
+
+    return new Hatchling({ ...props, transactionStatus }, hatchlingId)
   }
 
   private static getStageFromStatus(status: TransactionStatus): Stage {
@@ -45,6 +59,18 @@ export class Hatchling extends Entity<HatchlingProps> {
     }
 
     return Stage.create(StageEnum.Baby)
+  }
+
+  private static getStatusFromStage(stage: Stage): TransactionStatus {
+    if (stage.value === StageEnum.Adolescent) {
+      return TransactionStatus.create(TransactionStatusEnum.EthFinality)
+    }
+
+    if (stage.value === StageEnum.Adult ) {
+      return TransactionStatus.create(TransactionStatusEnum.BtcFinality)
+    }
+
+    return TransactionStatus.create(TransactionStatusEnum.Minted)
   }
 
   get account(): Address {

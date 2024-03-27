@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
 import { servicesContext } from '../../context'
-import ProgressBar from './ProgressBar'
-import OptInButton from './OptInButton'
 import Eggs from './Eggs'
 import Hatchling from './Hatchling'
 import StatusMessage from './StatusMessage'
@@ -14,42 +12,48 @@ function Main(): JSX.Element {
   const [element, setElement] = useState<ElementEnum>(ElementEnum.Fire)
 
   const {
-    connectWalletService,
-    mintNFTService,
-    getHatchlingStageService
+    findHatchlingService,
+    createHatchlingService
   } = useContext(servicesContext)
 
-  const connectWallet = async () => {
-    const response = await connectWalletService.execute()
-
-    setAddress(response.address)
-  }
-
-  const mintNFT = async () => {
-    const response = await mintNFTService.execute()
-
-    setTransactionHash(response.transactionHash)
+  const createHatchling = async (element: ElementEnum) => {
+    await createHatchlingService.execute({ element })
   }
 
   const hatchEgg = async (element: ElementEnum) => {
-    await connectWallet()
-    await mintNFT()
+    await createHatchling(element)
 
     setElement(element)
     setStage(StageEnum.Baby)
   }
 
-  const fetchHatchlingStage = async () => {
-    const response = await getHatchlingStageService.execute({ transactionHash })
-    const stageValue = response?.stage as keyof typeof StageEnum
+  const fetchHatchling = async () => {
+    const response = await findHatchlingService.execute()
+
+    if (!response) {
+      return;
+    }
+
+    const {
+      stage,
+      element,
+      account,
+      transactionHash
+    } = response
+
+    // @ts-ignore
+    const stageEnum = StageEnum[stage]
+    // @ts-ignore
+    const elementEnum = ElementEnum[element]
     
-    setStage(StageEnum[stageValue])
+    setStage(stageEnum)
+    setElement(elementEnum)
+    setAddress(account)
+    setTransactionHash(transactionHash)
   }
 
   useEffect(() => {
-    if (stage !== StageEnum.Egg) {
-      fetchHatchlingStage()
-    }
+    fetchHatchling()
   }, [])
 
   return (
@@ -62,12 +66,10 @@ function Main(): JSX.Element {
       <Hatchling element={element} stage={stage}/>
 
       <div className="mt-4 sm:mt-8 lg:mt-12">
-        <OptInButton />
-      </div>
-      <div className="mt-4 sm:mt-8 lg:mt-12">
-        <ProgressBar percent={8}/>
-        {address}
-        <StatusMessage stage={stage} />
+        <StatusMessage
+          stage={stage}
+          account={address}
+          transactionHash={transactionHash}/>
       </div>
     </div>
   </>

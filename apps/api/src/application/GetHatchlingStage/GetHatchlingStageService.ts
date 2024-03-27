@@ -16,7 +16,6 @@ export class GetHatchlingStageService {
   async execute({
     transactionHash
   }: GetHatchlingStageRequestDto): Promise<GetHatchlingStageResponseDto> {
-    console.log(`GetHatchlingStageService: transactionHash: ${transactionHash}`)
     const hash = TransactionHash.create(transactionHash)
     const stage = await this.hatchlingRepository.getStage(hash)
     

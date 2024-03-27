@@ -1,3 +1,4 @@
+import { ElementEnum, TransactionHash } from '@hemihatchlings/shared'
 import { Wallet } from '../entities/Wallet'
 
 export interface WalletRepository {
@@ -6,5 +7,5 @@ export interface WalletRepository {
   connect(): Promise<Wallet>
   addNetwork(): Promise<void>
   switchNetwork(): Promise<void>
-  mintNFT(): Promise<string>
+  mintNFT(element: ElementEnum): Promise<TransactionHash>
 }

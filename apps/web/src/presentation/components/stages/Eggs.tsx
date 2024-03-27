@@ -2,7 +2,6 @@ import { useState } from 'react'
 import fireEgg from '../../../assets/fire-egg.png'
 import waterEgg from '../../../assets/water-egg.png'
 import grassEgg from '../../../assets/grass-egg.png'
-import airEgg from '../../../assets/air-egg.png'
 import chevron from '../../../assets/chevron.svg'
 import { ElementEnum } from '@hemihatchlings/shared'
 
@@ -67,22 +66,10 @@ function Eggs({ hatchEgg }:EggsProps): JSX.Element {
         </button>
       </div>
 
-      <div className={`${active === 3 ? '' : 'hidden'} lg:block`}>
-        <button onClick={() => hatchEgg(ElementEnum.Air)}>
-          <div className="border border-white">
-            <img src={airEgg} alt="Air Egg" />
-          </div>
-          <div className="font-monaco text-sm text-white mt-2 text-left
-            sm:text-base md:text-lg md:mt-4">
-            04
-          </div>
-        </button>
-      </div>
-
       <button
         onClick={goNext}
         className='disabled:opacity-50 lg:hidden'
-        disabled={active === 3}>
+        disabled={active === 2}>
         <img src={chevron} className="w-32" alt="Go Right" />
       </button>
     </div>

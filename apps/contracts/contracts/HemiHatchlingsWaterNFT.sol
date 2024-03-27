@@ -6,13 +6,13 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract NFTCollection is ERC721Enumerable, Ownable {
+contract HemiHatchlingsWaterNFT is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIds;
     // The max number of NFTs in the collection
-    uint public constant MAX_SUPPLY = 100000000000;
+    uint public constant MAX_SUPPLY = 333;
     // The mint price for the collection
     uint public constant PRICE = 0 ether;
     // The max number of mints per wallet

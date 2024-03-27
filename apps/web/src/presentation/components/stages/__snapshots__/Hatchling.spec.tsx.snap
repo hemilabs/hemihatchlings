@@ -9,7 +9,7 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
       class="flex flex-col"
     >
       <div
-        class="blur
+        class="
           border w-96 items-center"
       >
         <img
@@ -36,7 +36,7 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
       <div
         class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
       >
-        🔄 HATCHING STAGE 1
+        ✅ HATCHING STAGE 1
       </div>
     </div>
     <div
@@ -75,7 +75,8 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
     </div>
     <img
       alt="Lock Icon"
-      class="absolute m-auto top-0 bottom-0 left-0 right-0"
+      class="
+            absolute m-auto top-0 bottom-0 left-0 right-0"
       src="/src/assets/lock-icon.png"
     />
   </div>
