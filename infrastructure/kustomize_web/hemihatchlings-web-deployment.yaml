@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hemihatchlings-web
+  labels:
+    app: hemihatchlings-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hemihatchlings-web
+  template:
+    metadata:
+      labels:
+        app: hemihatchlings-web
+    spec:
+      containers:
+      - name: hemihatchlings-web
+        image: hemilabs/hemihatchlings-web:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: VITE_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_API_URL
+      imagePullSecrets:
+      - name: dockerhub-secret
+    
