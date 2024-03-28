@@ -8,9 +8,20 @@ export class AxiosHatchlingRepository implements HatchlingRepository {
 
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_API_URL,
+      baseURL: this.getApiUrl(),
       timeout: 3000
     })
+  }
+
+  getApiUrl() {
+    const url = import.meta.env.VITE_API_URL
+    if (!url) {
+      throw new Error('VITE_API_URL is not defined')
+    }
+  
+    // replaces ${host} with the host address ignoring spaces and tabs within the brackets
+    const regex = /\$\{[ \t]*host[ \t]*\}/i 
+    return url.replace(regex, document.location.host)
   }
 
   create(hatchling: Hatchling): void {
