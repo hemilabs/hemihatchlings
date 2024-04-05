@@ -4,11 +4,11 @@
 
 body {
   background-color: #000;
-  cursor: url("assets/cursor.png"), pointer;
+  cursor: url("./cursor.png"), pointer;
 }
 
 a {
-  cursor: url("assets/cursor.png"), pointer;
+  cursor: url("./cursor.png"), pointer;
 }
 
 .font-monaco {
@@ -25,5 +25,5 @@ a {
 
 @font-face {
   font-family: Monaco;
-  src: url("assets/Monaco.ttf");
+  src: url("./Monaco.ttf");
 }

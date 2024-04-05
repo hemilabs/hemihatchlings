@@ -1,7 +1,10 @@
 import { useState } from 'react'
-import fireEgg from '../../../assets/fire-egg.png'
-import waterEgg from '../../../assets/water-egg.png'
-import grassEgg from '../../../assets/grass-egg.png'
+import { getImage } from '../../ImageHandler'
+
+const fireEgg = getImage('fire-egg.png')
+const waterEgg = getImage('water-egg.png')
+const grassEgg = getImage('grass-egg.png')
+
 import chevron from '../../../assets/chevron.svg'
 import { ElementEnum } from '@hemihatchlings/shared'
 
@@ -32,7 +35,7 @@ function Eggs({ hatchEgg }:EggsProps): JSX.Element {
 
       <div className={active === 0 ? '' : 'hidden'}>
         <button onClick={() => hatchEgg(ElementEnum.Fire)}>
-          <div className="border border-white">
+          <div className="border border-white transition duration-500 hover:scale-110">
             <img src={fireEgg} alt="Fire Egg" />
           </div>
           <div className="font-monaco text-sm text-white mt-2 text-left
@@ -44,7 +47,7 @@ function Eggs({ hatchEgg }:EggsProps): JSX.Element {
 
       <div className={`${active === 1 ? '' : 'hidden'} lg:block`}>
         <button onClick={() => hatchEgg(ElementEnum.Water)}>
-          <div className="border border-white">
+          <div className="border border-white transition duration-500 hover:scale-110">
             <img src={waterEgg} alt="Water Egg" />
           </div>
           <div className="font-monaco text-sm text-white mt-2 text-left
@@ -56,7 +59,7 @@ function Eggs({ hatchEgg }:EggsProps): JSX.Element {
 
       <div className={`${active === 2 ? '' : 'hidden'} lg:block`}>
         <button onClick={() => hatchEgg(ElementEnum.Grass)}>
-          <div className="border border-white">
+          <div className="border border-white transition duration-500 hover:scale-110">
             <img src={grassEgg} alt="Grass Egg" />
           </div>
           <div className="font-monaco text-sm text-white mt-2 text-left

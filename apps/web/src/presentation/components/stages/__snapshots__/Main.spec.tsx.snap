@@ -23,11 +23,11 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
       >
         <button>
           <div
-            class="border border-white"
+            class="border border-white transition duration-500 hover:scale-110"
           >
             <img
               alt="Fire Egg"
-              src="/src/assets/fire-egg.png"
+              src="./testnet/fire-egg.png"
             />
           </div>
           <div
@@ -42,11 +42,11 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
       >
         <button>
           <div
-            class="border border-white"
+            class="border border-white transition duration-500 hover:scale-110"
           >
             <img
               alt="Water Egg"
-              src="/src/assets/water-egg.png"
+              src="./testnet/water-egg.png"
             />
           </div>
           <div
@@ -61,11 +61,11 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
       >
         <button>
           <div
-            class="border border-white"
+            class="border border-white transition duration-500 hover:scale-110"
           >
             <img
               alt="Grass Egg"
-              src="/src/assets/grass-egg.png"
+              src="./testnet/grass-egg.png"
             />
           </div>
           <div
@@ -111,22 +111,22 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
           <img
             alt="Fire Baby"
             class=""
-            src="/src/assets/fire-baby.png"
+            src="./testnet/fire-baby.png"
           />
           <img
             alt="Water Baby"
             class="hidden"
-            src="/src/assets/water-baby.png"
+            src="./testnet/water-baby.png"
           />
           <img
             alt="Grass Baby"
             class="hidden"
-            src="/src/assets/grass-baby.png"
+            src="./testnet/grass-baby.png"
           />
           <img
             alt="Air Baby"
             class="hidden"
-            src="/src/assets/air-baby.png"
+            src="./testnet/air-baby.png"
           />
         </div>
         <div
@@ -145,22 +145,22 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
           <img
             alt="Fire Adult"
             class=""
-            src="/src/assets/fire-adult.png"
+            src="./testnet/fire-adult.png"
           />
           <img
             alt="Water Adult"
             class="hidden"
-            src="/src/assets/water-adult.png"
+            src="./testnet/water-adult.png"
           />
           <img
             alt="Grass Adult"
             class="hidden"
-            src="/src/assets/grass-adult.png"
+            src="./testnet/grass-adult.png"
           />
           <img
             alt="Air Adult"
             class="hidden"
-            src="/src/assets/air-adult.png"
+            src="./testnet/air-adult.png"
           />
         </div>
         <div
@@ -180,6 +180,20 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
       class="mt-4 sm:mt-8 lg:mt-12"
     >
       <div
+        class="
+        font-monaco text-sm text-white mt-2 text-center uppercase
+        sm:text-base md:text-lg md:mt-4"
+      >
+        Approaching BITCOIN Finality: EST. 90 MIN WAIT.
+      </div>
+      <div
+        class="hidden
+        font-monaco text-sm text-white mt-2 text-center uppercase
+        sm:text-base md:text-lg md:mt-4"
+      >
+        ethereum & bitcoin finality achieved
+      </div>
+      <div
         class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
       >
         <div>
@@ -190,18 +204,14 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="
-        font-monaco text-sm text-white mt-2 text-center uppercase
-        sm:text-base md:text-lg md:mt-4"
+        class="text-white text-center underline"
       >
-        Approaching BITCOIN Finality
-      </div>
-      <div
-        class="hidden
-        font-monaco text-sm text-white mt-2 text-center uppercase
-        sm:text-base md:text-lg md:mt-4"
-      >
-        ethereum & bitcoin finality achieved
+        <a
+          href="https://testnet.explorer.hemi.network/tx/"
+          target="_blank"
+        >
+          View on block explorer
+        </a>
       </div>
     </div>
   </div>

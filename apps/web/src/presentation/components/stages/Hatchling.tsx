@@ -1,15 +1,22 @@
-import fireBaby from '../../../assets/fire-baby.png'
-import waterBaby from '../../../assets/water-baby.png'
-import grassBaby from '../../../assets/grass-baby.png'
-import airBaby from '../../../assets/air-baby.png'
+import { useEffect, useMemo } from 'react'
+import { ElementEnum, StageEnum } from '@hemihatchlings/shared'
 
-import fireAdult from '../../../assets/fire-adult.png'
-import waterAdult from '../../../assets/water-adult.png'
-import grassAdult from '../../../assets/grass-adult.png'
-import airAdult from '../../../assets/air-adult.png'
+import Particles, { initParticlesEngine } from "@tsparticles/react"
+import { loadSlim } from "@tsparticles/slim"
+import { ISourceOptions } from '@tsparticles/engine'
 
 import lockIcon from '../../../assets/lock-icon.png'
-import { ElementEnum, StageEnum } from '@hemihatchlings/shared'
+import { getImage } from '../../ImageHandler'
+
+const fireBaby = getImage('fire-baby.png')
+const waterBaby = getImage('water-baby.png')
+const grassBaby = getImage('grass-baby.png')
+const airBaby = getImage('air-baby.png')
+
+const fireAdult = getImage('fire-adult.png')
+const waterAdult = getImage('water-adult.png')
+const grassAdult = getImage('grass-adult.png')
+const airAdult = getImage('air-adult.png')
 
 interface HatchlingProps {
   element: ElementEnum,
@@ -21,13 +28,35 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
     return stage === StageEnum.Baby
   }
 
+  const isAdolescent = (): Boolean => {
+    return stage === StageEnum.Adolescent
+  }
+
   const isAdult = (): Boolean => {
     return stage === StageEnum.Adult
   }
 
+  useEffect(() => {
+    if (isBaby() || isAdolescent() || isAdult()) {
+      //@ts-ignore
+      confetti({
+        spread: 360,
+        ticks: 50,
+        gravity: 0,
+        decay: 0.94,
+        startVelocity: 30,
+        angle: 260,
+        particleCount: 100,
+        origin: { y: 0 },
+        scalar: 2,
+        shapes: ['square'],
+        colors: ["BC6AAB", "C86280", "934CD4", "C03F5D"],
+      })
+    }
+  }, [stage]);
+
   return (
     <div className="flex flex-row justify-center">
-
       <div className='flex flex-col'>
         <div className={`${isBaby() ? 'blur' : ''}
           border w-96 items-center`}>

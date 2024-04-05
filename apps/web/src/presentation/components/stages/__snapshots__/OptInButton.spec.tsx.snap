@@ -20,11 +20,11 @@ exports[`src/presentation/Eggs > renders correctly 1`] = `
     >
       <button>
         <div
-          class="border border-white"
+          class="border border-white transition duration-500 hover:scale-110"
         >
           <img
             alt="Fire Egg"
-            src="/src/assets/fire-egg.png"
+            src="./testnet/fire-egg.png"
           />
         </div>
         <div
@@ -39,11 +39,11 @@ exports[`src/presentation/Eggs > renders correctly 1`] = `
     >
       <button>
         <div
-          class="border border-white"
+          class="border border-white transition duration-500 hover:scale-110"
         >
           <img
             alt="Water Egg"
-            src="/src/assets/water-egg.png"
+            src="./testnet/water-egg.png"
           />
         </div>
         <div
@@ -58,11 +58,11 @@ exports[`src/presentation/Eggs > renders correctly 1`] = `
     >
       <button>
         <div
-          class="border border-white"
+          class="border border-white transition duration-500 hover:scale-110"
         >
           <img
             alt="Grass Egg"
-            src="/src/assets/grass-egg.png"
+            src="./testnet/grass-egg.png"
           />
         </div>
         <div
