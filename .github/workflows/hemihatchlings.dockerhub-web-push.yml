@@ -67,6 +67,7 @@ jobs:
             --from-literal=VITE_CHAIN_RPC_URL=${{ secrets.VITE_CHAIN_RPC_URL }} \
             --from-literal=VITE_CHAIN_BLOCK_EXPLORER_URL=${{ secrets.VITE_CHAIN_BLOCK_EXPLORER_URL }} \
             --from-literal=VITE_CHAIN_CURRENCY_NAME=${{ secrets.VITE_CHAIN_CURRENCY_NAME }} \
+            --from-literal=VITE_CHAIN_CURRENCY_DECIMALS=${{ secrets.VITE_CHAIN_CURRENCY_DECIMALS }} \
             --from-literal=VITE_CHAIN_CURRENCY_SYMBOL=${{ secrets.VITE_CHAIN_CURRENCY_SYMBOL }} \
             --from-literal=VITE_FIRE_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_FIRE_SMART_CONTRACT_ADDRESS }} \
             --from-literal=VITE_WATER_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_WATER_SMART_CONTRACT_ADDRESS }} \
@@ -100,7 +101,7 @@ jobs:
 
       - name: Checking Kustomize
         run: |
-          kustomize build ./infrastructure/kustomize_api
+          kustomize build ./infrastructure/kustomize_web
           kubectl get all --namespace=${{ env.namespace }}
       
       - name: Deploy to VKE
