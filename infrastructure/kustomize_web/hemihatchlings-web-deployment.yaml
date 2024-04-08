@@ -26,6 +26,56 @@ spec:
             configMapKeyRef:
               name: hemihatchlings-config
               key: VITE_API_URL
+        - name: VITE_CHAIN_ID
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_ID
+        - name: VITE_CHAIN_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_NAME
+        - name: VITE_CHAIN_NETWORK
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_NETWORK
+        - name: VITE_CHAIN_RPC_URL
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_RPC_URL
+        - name: VITE_CHAIN_BLOCK_EXPLORER_URL
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_BLOCK_EXPLORER_URL
+        - name: VITE_CHAIN_CURRENCY_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_CURRENCY_NAME
+        - name: VITE_CHAIN_CURRENCY_SYMBOL
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_CURRENCY_SYMBOL
+        - name: VITE_FIRE_SMART_CONTRACT_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_FIRE_SMART_CONTRACT_ADDRESS
+        - name: VITE_WATER_SMART_CONTRACT_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_WATER_SMART_CONTRACT_ADDRESS
+        - name: VITE_GRASS_SMART_CONTRACT_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_GRASS_SMART_CONTRACT_ADDRESS
       imagePullSecrets:
       - name: dockerhub-secret
     
