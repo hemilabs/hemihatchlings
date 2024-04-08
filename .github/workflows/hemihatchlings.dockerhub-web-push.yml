@@ -60,7 +60,19 @@ jobs:
           else
             echo "Creating hemihatchlings-config"
             kubectl create configmap hemihatchlings-config \
-            --from-literal=VITE_API_URL=http://localhost:3000 \
+            --from-literal=VITE_API_URL=${{ secrets.VITE_API_URL }} \
+            --from-literal=VITE_CHAIN_ID=${{ secrets.VITE_CHAIN_ID }} \
+            --from-literal=VITE_CHAIN_NAME=${{ secrets.VITE_CHAIN_NAME }} \
+            --from-literal=VITE_CHAIN_NETWORK=${{ secrets.VITE_CHAIN_NETWORK }} \
+            --from-literal=VITE_CHAIN_RPC_URL=${{ secrets.VITE_CHAIN_RPC_URL }} \
+            --from-literal=VITE_CHAIN_BLOCK_EXPLORER_URL=${{ secrets.VITE_CHAIN_BLOCK_EXPLORER_URL }} \
+            --from-literal=VITE_CHAIN_CURRENCY_NAME=${{ secrets.VITE_CHAIN_CURRENCY_NAME }} \
+            --from-literal=VITE_CHAIN_CURRENCY_SYMBOL=${{ secrets.VITE_CHAIN_CURRENCY_SYMBOL }} \
+            --from-literal=VITE_FIRE_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_FIRE_SMART_CONTRACT_ADDRESS }} \
+            --from-literal=VITE_WATER_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_WATER_SMART_CONTRACT_ADDRESS }} \
+            --from-literal=VITE_GRASS_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_GRASS_SMART_CONTRACT_ADDRESS }} \
+            --from-literal=PORT=${{ secrets.PORT }} \
+            --from-literal=RPC_URL=${{ secrets.RPC_URL }} \
             --namespace=${{ env.namespace }}
           fi
           echo "Checking Dockerhub Secret"
