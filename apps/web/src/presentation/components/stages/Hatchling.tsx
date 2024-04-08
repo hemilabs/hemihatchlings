@@ -1,9 +1,5 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect } from 'react'
 import { ElementEnum, StageEnum } from '@hemihatchlings/shared'
-
-import Particles, { initParticlesEngine } from "@tsparticles/react"
-import { loadSlim } from "@tsparticles/slim"
-import { ISourceOptions } from '@tsparticles/engine'
 
 import lockIcon from '../../../assets/lock-icon.png'
 import { getImage } from '../../ImageHandler'
