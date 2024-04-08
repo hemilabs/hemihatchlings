@@ -61,6 +61,11 @@ spec:
             configMapKeyRef:
               name: hemihatchlings-config
               key: VITE_CHAIN_CURRENCY_SYMBOL
+        - name: VITE_CHAIN_CURRENCY_DECIMALS
+          valueFrom:
+            configMapKeyRef:
+              name: hemihatchlings-config
+              key: VITE_CHAIN_CURRENCY_DECIMALS
         - name: VITE_FIRE_SMART_CONTRACT_ADDRESS
           valueFrom:
             configMapKeyRef:
