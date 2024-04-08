@@ -15,22 +15,22 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
         <img
           alt="Fire Baby"
           class=""
-          src="/src/assets/fire-baby.png"
+          src="./testnet/fire-baby.png"
         />
         <img
           alt="Water Baby"
           class="hidden"
-          src="/src/assets/water-baby.png"
+          src="./testnet/water-baby.png"
         />
         <img
           alt="Grass Baby"
           class="hidden"
-          src="/src/assets/grass-baby.png"
+          src="./testnet/grass-baby.png"
         />
         <img
           alt="Air Baby"
           class="hidden"
-          src="/src/assets/air-baby.png"
+          src="./testnet/air-baby.png"
         />
       </div>
       <div
@@ -49,22 +49,22 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
         <img
           alt="Fire Adult"
           class=""
-          src="/src/assets/fire-adult.png"
+          src="./testnet/fire-adult.png"
         />
         <img
           alt="Water Adult"
           class="hidden"
-          src="/src/assets/water-adult.png"
+          src="./testnet/water-adult.png"
         />
         <img
           alt="Grass Adult"
           class="hidden"
-          src="/src/assets/grass-adult.png"
+          src="./testnet/grass-adult.png"
         />
         <img
           alt="Air Adult"
           class="hidden"
-          src="/src/assets/air-adult.png"
+          src="./testnet/air-adult.png"
         />
       </div>
       <div

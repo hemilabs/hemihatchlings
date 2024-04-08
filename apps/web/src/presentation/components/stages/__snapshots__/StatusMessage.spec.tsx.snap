@@ -3,6 +3,20 @@
 exports[`src/presentation/StatusMessage > renders correctly 1`] = `
 <DocumentFragment>
   <div
+    class="
+        font-monaco text-sm text-white mt-2 text-center uppercase
+        sm:text-base md:text-lg md:mt-4"
+  >
+    Approaching ETHEREUM Finality: EST. 15 MIN WAIT.
+  </div>
+  <div
+    class="hidden
+        font-monaco text-sm text-white mt-2 text-center uppercase
+        sm:text-base md:text-lg md:mt-4"
+  >
+    ethereum & bitcoin finality achieved
+  </div>
+  <div
     class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
   >
     <div>
@@ -13,18 +27,14 @@ exports[`src/presentation/StatusMessage > renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="
-        font-monaco text-sm text-white mt-2 text-center uppercase
-        sm:text-base md:text-lg md:mt-4"
+    class="text-white text-center underline"
   >
-    Approaching ETHEREUM Finality
-  </div>
-  <div
-    class="hidden
-        font-monaco text-sm text-white mt-2 text-center uppercase
-        sm:text-base md:text-lg md:mt-4"
-  >
-    ethereum & bitcoin finality achieved
+    <a
+      href="https://testnet.explorer.hemi.network/tx/0x7304dc174aab2bc487b1befb9e35ba3632b9693f0c0548e138b4401f263910f1"
+      target="_blank"
+    >
+      View on block explorer
+    </a>
   </div>
 </DocumentFragment>
 `;

@@ -54,7 +54,7 @@ function Main(): JSX.Element {
 
   useEffect(() => {
     fetchHatchling()
-  }, [])
+  }, [stage])
 
   return (
   <>
