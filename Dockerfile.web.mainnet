@@ -1,4 +1,4 @@
-## -*- docker-image-name: "hemilabs/hemihatchlings-web:1.0.0" -*-
+## -*- docker-image-name: "hemilabs/hemihatchlings-web-mainnet:1.0.0" -*-
 FROM node:20 as build
 
 COPY package*.json ./
@@ -8,6 +8,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . .
+
+RUN mv /usr/src/app/apps/web/.env.mainnet /usr/src/app/apps/web/.env
 
 RUN npm install
 
