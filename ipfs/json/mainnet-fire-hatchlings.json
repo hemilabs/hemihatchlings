@@ -1,0 +1,9 @@
+{
+  "name": "Fire Hemi Hatchling",
+  "description": "Hemi Hatchlings offers an immersive introduction to the Hemi Network's innovative blockchain technology that brings together both the Ethereum & Bitcoin networks, merging elemental lore with blockchain finality principles.", 
+  "image": "ipfs://QmU3bhZXkhzP1JaSuaNd4p8Lw4r6xSApMhYEKjaraT1ZVF", 
+  "attributes": [{
+    "trait_type": "Element",
+    "value": "Fire"
+  }]
+}
