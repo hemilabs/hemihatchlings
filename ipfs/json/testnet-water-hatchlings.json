@@ -1,0 +1,9 @@
+{
+  "name": "Water Hemi Hatchling",
+  "description": "Hemi Hatchlings offers an immersive introduction to the Hemi Network's innovative blockchain technology that brings together both the Ethereum & Bitcoin networks, merging elemental lore with blockchain finality principles.", 
+  "image": "ipfs://QmNhtVvn3Q41MXqnzHTKiQWH3rfBzgGkVZW7F61Rek6tFa", 
+  "attributes": [{
+    "trait_type": "Element",
+    "value": "Water"
+  }]
+}
