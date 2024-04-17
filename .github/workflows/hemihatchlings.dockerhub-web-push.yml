@@ -3,19 +3,32 @@ name: '[hemihatchlings] dockerhub web push'
 on:
   push:
     tags:
-      - 'v*'
+      - 'mainnet-v*'
+      - 'testnet-v*'
 
 jobs:
   dockerhubpush-VKEdeploy:
-    env:
-      namespace: hemihatchlings
 
     name: '[hemihatchlings] dockerhub web push'
     runs-on: ubuntu-latest
     steps:
       - name: Get tag
         id: vars
-        run: echo "tag=${GITHUB_REF#refs/*/v}" >> $GITHUB_OUTPUT
+        run: |
+          TAG_NAME="${GITHUB_REF#refs/tags/}"
+          echo "tag=${TAG_NAME}" >> $GITHUB_ENV
+          if [[ $TAG_NAME == "mainnet-v"* ]]; then
+            echo "DOCKERFILE=Dockerfile.web.mainnet" >> $GITHUB_ENV
+            echo "namespace=hemihatchlings" >> $GITHUB_ENV
+            echo "REPO=hemilabs/hemihatchlings-web" >> $GITHUB_ENV
+            echo "INFRA=infrastructure/kustomize_web" >> $GITHUB_ENV
+          elif [[ $TAG_NAME == "testnet-v"* ]]; then
+            echo "DOCKERFILE=Dockerfile.web.testnet" >> $GITHUB_ENV
+            echo "namespace=hemihatchlings-test" >> $GITHUB_ENV
+            echo "REPO=hemilabs/hemihatchlings-test" >> $GITHUB_ENV
+            echo "INFRA=infrastructure/kustomize_web_test" >> $GITHUB_ENV
+          fi
+
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -27,12 +40,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and push hemihatchlings-web
+      - name: Build and Push hemihatchlings
         uses: docker/build-push-action@v3
         with:
-          tags: hemilabs/hemihatchlings-web:${{ steps.vars.outputs.tag }}
+          tags: ${{ env.REPO }}:${{ env.tag }}
           context: "{{defaultContext}}"
-          file: "Dockerfile.web"
+          file: ${{ env.DOCKERFILE }}
           push: true
 
       - name: Checkout code
@@ -60,18 +73,6 @@ jobs:
           else
             echo "Creating hemihatchlings-config"
             kubectl create configmap hemihatchlings-config \
-            --from-literal=VITE_API_URL=${{ secrets.VITE_API_URL }} \
-            --from-literal=VITE_CHAIN_ID=${{ secrets.VITE_CHAIN_ID }} \
-            --from-literal=VITE_CHAIN_NAME=${{ secrets.VITE_CHAIN_NAME }} \
-            --from-literal=VITE_CHAIN_NETWORK=${{ secrets.VITE_CHAIN_NETWORK }} \
-            --from-literal=VITE_CHAIN_RPC_URL=${{ secrets.VITE_CHAIN_RPC_URL }} \
-            --from-literal=VITE_CHAIN_BLOCK_EXPLORER_URL=${{ secrets.VITE_CHAIN_BLOCK_EXPLORER_URL }} \
-            --from-literal=VITE_CHAIN_CURRENCY_NAME=${{ secrets.VITE_CHAIN_CURRENCY_NAME }} \
-            --from-literal=VITE_CHAIN_CURRENCY_DECIMALS=${{ secrets.VITE_CHAIN_CURRENCY_DECIMALS }} \
-            --from-literal=VITE_CHAIN_CURRENCY_SYMBOL=${{ secrets.VITE_CHAIN_CURRENCY_SYMBOL }} \
-            --from-literal=VITE_FIRE_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_FIRE_SMART_CONTRACT_ADDRESS }} \
-            --from-literal=VITE_WATER_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_WATER_SMART_CONTRACT_ADDRESS }} \
-            --from-literal=VITE_GRASS_SMART_CONTRACT_ADDRESS=${{ secrets.VITE_GRASS_SMART_CONTRACT_ADDRESS }} \
             --from-literal=PORT=${{ secrets.PORT }} \
             --from-literal=RPC_URL=${{ secrets.RPC_URL }} \
             --namespace=${{ env.namespace }}
@@ -95,14 +96,14 @@ jobs:
 
       - name: Update Image Tag in deployment
         run: |
-              kustomize edit set image hemilabs/hemihatchlings-web:latest=hemilabs/hemihatchlings-web:${{ steps.vars.outputs.tag }}
+              kustomize edit set image hemilabs/hemihatchlings-web:latest=${{ env.REPO }}:${{ env.tag }}
               kustomize edit set namespace ${{ env.namespace }}
-        working-directory: ./infrastructure/kustomize_web
+        working-directory: ./${{ env.INFRA }}
 
       - name: Checking Kustomize
         run: |
-          kustomize build ./infrastructure/kustomize_web
+          kustomize build ./${{ env.INFRA }}
           kubectl get all --namespace=${{ env.namespace }}
       
       - name: Deploy to VKE
-        run: kubectl apply -k ./infrastructure/kustomize_web
+        run: kubectl apply -k ./${{ env.INFRA }}
