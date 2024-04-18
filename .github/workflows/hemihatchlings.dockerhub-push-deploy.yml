@@ -40,12 +40,21 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and Push hemihatchlings
+
+      - name: Build and Push hemihatchlings-web
         uses: docker/build-push-action@v3
         with:
           tags: ${{ env.REPO }}:${{ env.tag }}
           context: "{{defaultContext}}"
           file: ${{ env.DOCKERFILE }}
+          push: true
+
+      - name: Build and Push hemihatchlings-api
+        uses: docker/build-push-action@v3
+        with:
+          tags: hemilabs/hemihatchlings-api:${{ env.tag }}
+          context: "{{defaultContext}}"
+          file: "Dockerfile.api"
           push: true
 
       - name: Checkout code
@@ -94,7 +103,7 @@ jobs:
             --namespace=${{ env.namespace }}
           fi
 
-      - name: Update Image Tag in deployment
+      - name: Update Image Tag in Web deployment
         run: |
               kustomize edit set image hemilabs/hemihatchlings-web:latest=${{ env.REPO }}:${{ env.tag }}
               kustomize edit set namespace ${{ env.namespace }}
@@ -107,3 +116,23 @@ jobs:
       
       - name: Deploy to VKE
         run: kubectl apply -k ./${{ env.INFRA }}
+
+      - name: Update Image Tag in API deployment
+        run: |
+              kustomize edit set image hemilabs/hemihatchlings-web:latest=hemilabs/hemihatchlings-api:${{ env.tag }}
+              kustomize edit set namespace ${{ env.namespace }}
+        working-directory: ./infrastructure/kustomize_api/base
+
+      - name: Build and Deploy to VKE
+        run: |
+          echo "TAG_NAME=${{ env.tag }}"
+          if [[ "${{ env.tag }}" == "mainnet-v"* ]]; then
+            kustomize build ./infrastructure/kustomize_api/overlays/mainnet
+            kubectl apply -k ./infrastructure/kustomize_api/overlays/mainnet
+          elif [[ "${{ env.tag }}" == "testnet-v"* ]]; then
+            kustomize build ./infrastructure/kustomize_api/overlays/testnet
+            kubectl apply -k ./infrastructure/kustomize_api/overlays/testnet
+          fi
+          kubectl get all --namespace=${{ env.namespace }}
+
+        working-directory: .
