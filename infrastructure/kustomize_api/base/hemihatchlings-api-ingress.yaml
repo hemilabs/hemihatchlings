@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: hemihatchlings.hemi.xyz
+  - host: hemihatchlings-test.hemi.xyz
     http:
       paths:
       - path: /api
