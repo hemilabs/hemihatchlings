@@ -58,11 +58,11 @@ exports[`src/presentation/Eggs > renders correctly 1`] = `
     >
       <button>
         <div
-          class="p-8 border border-white bg-grass-green"
+          class="p-8 border border-white bg-earth-green"
         >
           <img
-            alt="Grass Egg"
-            src="/src/assets/grass-egg.png"
+            alt="Earth Egg"
+            src="/src/assets/earth-egg.png"
           />
         </div>
         <div

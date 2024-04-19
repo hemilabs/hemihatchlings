@@ -23,9 +23,9 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
           src="./testnet/water-baby.png"
         />
         <img
-          alt="Grass Baby"
+          alt="Earth Baby"
           class="hidden"
-          src="./testnet/grass-baby.png"
+          src="./testnet/earth-baby.png"
         />
         <img
           alt="Air Baby"
@@ -57,9 +57,9 @@ exports[`src/presentation/Hatchling > renders correctly 1`] = `
           src="./testnet/water-adult.png"
         />
         <img
-          alt="Grass Adult"
+          alt="Earth Adult"
           class="hidden"
-          src="./testnet/grass-adult.png"
+          src="./testnet/earth-adult.png"
         />
         <img
           alt="Air Adult"

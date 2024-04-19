@@ -41,7 +41,7 @@ describe('src/domain/valueObjects/Element', () => {
     })
 
     it('should set the element in the value property', () => {
-      const expectedElement = ElementEnum.Grass
+      const expectedElement = ElementEnum.Earth
       const element = Element.create(expectedElement)
 
       expect(element.value).toBe(expectedElement)

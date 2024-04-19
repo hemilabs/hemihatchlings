@@ -61,8 +61,8 @@ exports[`src/presentation/Eggs > renders correctly 1`] = `
           class="border border-white transition duration-500 hover:scale-110"
         >
           <img
-            alt="Grass Egg"
-            src="./testnet/grass-egg.png"
+            alt="Earth Egg"
+            src="./testnet/earth-egg.png"
           />
         </div>
         <div

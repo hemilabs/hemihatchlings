@@ -6,12 +6,12 @@ import { getImage } from '../../ImageHandler'
 
 const fireBaby = getImage('fire-baby.png')
 const waterBaby = getImage('water-baby.png')
-const grassBaby = getImage('grass-baby.png')
+const earthBaby = getImage('earth-baby.png')
 const airBaby = getImage('air-baby.png')
 
 const fireAdult = getImage('fire-adult.png')
 const waterAdult = getImage('water-adult.png')
-const grassAdult = getImage('grass-adult.png')
+const earthAdult = getImage('earth-adult.png')
 const airAdult = getImage('air-adult.png')
 
 interface HatchlingProps {
@@ -60,8 +60,8 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
             className={`${element === ElementEnum.Fire ? '' : 'hidden'}`} />
           <img src={waterBaby} alt="Water Baby"
             className={`${element === ElementEnum.Water ? '' : 'hidden'}`} />
-          <img src={grassBaby} alt="Grass Baby"
-            className={`${element === ElementEnum.Grass ? '' : 'hidden'}`} />
+          <img src={earthBaby} alt="Earth Baby"
+            className={`${element === ElementEnum.Earth ? '' : 'hidden'}`} />
           <img src={airBaby} alt="Air Baby"
             className={`${element === ElementEnum.Air ? '' : 'hidden'}`} />
         </div>
@@ -77,8 +77,8 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
             className={`${element === ElementEnum.Fire ? '' : 'hidden'}`} />
           <img src={waterAdult} alt="Water Adult"
             className={`${element === ElementEnum.Water ? '' : 'hidden'}`} />
-          <img src={grassAdult} alt="Grass Adult"
-            className={`${element === ElementEnum.Grass ? '' : 'hidden'}`} />
+          <img src={earthAdult} alt="Earth Adult"
+            className={`${element === ElementEnum.Earth ? '' : 'hidden'}`} />
           <img src={airAdult} alt="Air Adult"
             className={`${element === ElementEnum.Air ? '' : 'hidden'}`} />
         </div>

@@ -64,8 +64,8 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
             class="border border-white transition duration-500 hover:scale-110"
           >
             <img
-              alt="Grass Egg"
-              src="./testnet/grass-egg.png"
+              alt="Earth Egg"
+              src="./testnet/earth-egg.png"
             />
           </div>
           <div
@@ -119,9 +119,9 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
             src="./testnet/water-baby.png"
           />
           <img
-            alt="Grass Baby"
+            alt="Earth Baby"
             class="hidden"
-            src="./testnet/grass-baby.png"
+            src="./testnet/earth-baby.png"
           />
           <img
             alt="Air Baby"
@@ -153,9 +153,9 @@ exports[`src/presentation/stages/Main > renders correctly 1`] = `
             src="./testnet/water-adult.png"
           />
           <img
-            alt="Grass Adult"
+            alt="Earth Adult"
             class="hidden"
-            src="./testnet/grass-adult.png"
+            src="./testnet/earth-adult.png"
           />
           <img
             alt="Air Adult"
