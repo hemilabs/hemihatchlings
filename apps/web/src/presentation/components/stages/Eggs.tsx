@@ -3,7 +3,7 @@ import { getImage } from '../../ImageHandler'
 
 const fireEgg = getImage('fire-egg.png')
 const waterEgg = getImage('water-egg.png')
-const grassEgg = getImage('grass-egg.png')
+const earthEgg = getImage('earth-egg.png')
 
 import chevron from '../../../assets/chevron.svg'
 import { ElementEnum } from '@hemihatchlings/shared'
@@ -58,9 +58,9 @@ function Eggs({ hatchEgg }:EggsProps): JSX.Element {
       </div>
 
       <div className={`${active === 2 ? '' : 'hidden'} lg:block`}>
-        <button onClick={() => hatchEgg(ElementEnum.Grass)}>
+        <button onClick={() => hatchEgg(ElementEnum.Earth)}>
           <div className="border border-white transition duration-500 hover:scale-110">
-            <img src={grassEgg} alt="Grass Egg" />
+            <img src={earthEgg} alt="Earth Egg" />
           </div>
           <div className="font-monaco text-sm text-white mt-2 text-left
             sm:text-base md:text-lg md:mt-4">

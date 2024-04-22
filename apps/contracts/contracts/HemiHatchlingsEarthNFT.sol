@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract HemiHatchlingsGrassNFT is ERC721Enumerable, Ownable {
+contract HemiHatchlingsEarthNFT is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
     using Counters for Counters.Counter;
 
@@ -32,7 +32,7 @@ contract HemiHatchlingsGrassNFT is ERC721Enumerable, Ownable {
         baseTokenURI = _baseTokenURI;
     }
 
-    function tokenURI(uint256 tokenId) public view virtual returns (string memory) {
+    function tokenURI(uint256 tokenId) override public view virtual returns (string memory) {
         _requireOwned(tokenId);
         
         return _baseURI();

@@ -32,7 +32,7 @@ contract HemiHatchlingsFireNFT is ERC721Enumerable, Ownable {
         baseTokenURI = _baseTokenURI;
     }
 
-    function tokenURI(uint256 tokenId) public view virtual returns (string memory) {
+    function tokenURI(uint256 tokenId) override public view virtual returns (string memory) {
         _requireOwned(tokenId);
         
         return _baseURI();

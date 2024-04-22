@@ -10,8 +10,8 @@ describe('src/domain/enums/ElementEnum', () => {
     expect(ElementEnum.Water).toBe('Water')
   })
 
-  it('should have a Grass with value "Grass"', () => {
-    expect(ElementEnum.Grass).toBe('Grass')
+  it('should have a Earth with value "Earth"', () => {
+    expect(ElementEnum.Earth).toBe('Earth')
   })
 
   it('should have a Air with value "Air"', () => {
