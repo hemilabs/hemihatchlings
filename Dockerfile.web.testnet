@@ -11,6 +11,8 @@ COPY . .
 
 RUN mv /usr/src/app/apps/web/.env.testnet /usr/src/app/apps/web/.env
 
+RUN cd /usr/src/app/apps/web
+
 RUN npm install
 
 RUN npm run build
