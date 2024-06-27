@@ -127,11 +127,11 @@ jobs:
         run: |
           echo "TAG_NAME=${{ env.tag }}"
           if [[ "${{ env.tag }}" == "mainnet-v"* ]]; then
-            kustomize build ./infrastructure/kustomize_api/
-            kubectl apply -k ./infrastructure/kustomize_api/
+            kustomize build ./infrastructure/kustomize_api/base/
+            kubectl apply -k ./infrastructure/kustomize_api/base/
           elif [[ "${{ env.tag }}" == "testnet-v"* ]]; then
-            kustomize build ./infrastructure/kustomize_api/
-            kubectl apply -k ./infrastructure/kustomize_api/
+            kustomize build ./infrastructure/kustomize_api/base/
+            kubectl apply -k ./infrastructure/kustomize_api/base/
           fi
           kubectl get all --namespace=${{ env.namespace }}
 
