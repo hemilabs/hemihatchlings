@@ -1,4 +1,0 @@
-resources:
-  - hemihatchlings-web-deployment.yaml
-  - hemihatchlings-web-service.yaml
-  - hemihatchlings-web-ingress.yaml
