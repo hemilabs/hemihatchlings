@@ -1,0 +1,7 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: hemihatchlings.letshamsterdance.xyz
+
+- op: replace
+  path: /spec/tls/0/hosts/0
+  value: hemihatchlings.letshamsterdance.xyz
