@@ -176,7 +176,7 @@ jobs:
       - name: Deploy API to VKE
         run: kubectl apply -k ./infrastructure/kustomize_api/base/
 
-deploy_staging:
+  deploy_staging:
     name: "Deploy Staging to VKE"
     runs-on: "ubuntu-latest"
     needs: ["deploy_testnet_mainnet", "dockerhubpush"]
