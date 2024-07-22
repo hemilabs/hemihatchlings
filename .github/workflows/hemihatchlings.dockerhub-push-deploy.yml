@@ -162,7 +162,7 @@ jobs:
           tag: ${{ github.event.inputs.tag }}
           namespace: ${{ needs.dockerhubpush.outputs.namespace }}
         run: |
-              kustomize edit set image hemilabs/hemihatchlings-api:1.0.0=hemilabs/hemihatchlings-api:${{ env.tag }}
+              kustomize edit set image hemilabs/hemihatchlings-api:1.0.0=hemilabs/hemihatchlings-api:${{ needs.dockerhubpush.outputs.tag }}
               kustomize edit set namespace ${{ needs.dockerhubpush.outputs.namespace }}
         working-directory: ./infrastructure/kustomize_api/base
 
