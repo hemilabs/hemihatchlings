@@ -3,6 +3,7 @@ import { BrowserProvider, Contract, JsonRpcSigner, ethers } from 'ethers'
 import { WalletRepository } from '../domain/repositories/WalletRepository'
 import { Wallet } from '../domain/entities/Wallet'
 import ABI from './ContractABI'
+import { WalletHasHatchlingError } from '../domain/errors/WalletHasHatchlingError'
 
 interface ChainData {
   chainId: string,
@@ -65,8 +66,6 @@ export class EthersWalletRepository implements WalletRepository {
     this.signer =  await this.provider.getSigner()
     const { address } = this.signer
 
-
-
     return { address }
   }
 
@@ -88,8 +87,33 @@ export class EthersWalletRepository implements WalletRepository {
     const contractAddress = this.contractAddress[element]
     const contract = new ethers.Contract(contractAddress, ABI, this.signer)
 
+    const addressHasNFT = await this.addressHasAnyNFT()
+
+    if (addressHasNFT) {
+      throw new WalletHasHatchlingError()
+    }
+
     const { hash } = await contract.mintNFTs(1)
 
     return TransactionHash.create(hash)
+  }
+
+  private async addressHasAnyNFT(): Promise<boolean> {
+    let contractCalls: Promise<number>[] = []
+    // @ts-ignore
+    const { address } = this.signer
+
+    Object.values(ElementEnum).forEach(element => {
+      const elementAddress = this.contractAddress[element]
+      const elementContract = new ethers.Contract(elementAddress, ABI, this.signer)
+
+      contractCalls.push(elementContract.balanceOf(address))
+    })
+
+    const results = await Promise.all(contractCalls)
+    
+    const moreThanZero = (balance: number) => balance > 0
+
+    return results.some(moreThanZero)
   }
 }
