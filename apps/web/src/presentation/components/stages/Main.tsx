@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from 'react'
 import { servicesContext } from '../../context'
+import Toast from './../Toast'
 import Eggs from './Eggs'
 import Hatchling from './Hatchling'
 import StatusMessage from './StatusMessage'
+import errorMessages from '../../errorMessages'
 import { ElementEnum, Stage, StageEnum } from '@hemihatchlings/shared'
 
 function Main(): JSX.Element {
@@ -10,6 +12,8 @@ function Main(): JSX.Element {
   const [address, setAddress] = useState('')
   const [transactionHash, setTransactionHash] = useState('')
   const [element, setElement] = useState<ElementEnum>(ElementEnum.Fire)
+  const [showToast, setShowToast] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const {
     findHatchlingService,
@@ -20,11 +24,27 @@ function Main(): JSX.Element {
     await createHatchlingService.execute({ element })
   }
 
-  const hatchEgg = async (element: ElementEnum) => {
-    await createHatchling(element)
+  const openToast = (error: Error) => {
+    const message = errorMessages[error.message] || 'Unexpected Error'
+    
+    setErrorMessage(message)
+    setShowToast(true)
 
-    setElement(element)
-    setStage(StageEnum.Baby)
+    setTimeout(() => {
+      setShowToast(false)
+    }, 5000)
+  }
+
+  const hatchEgg = async (element: ElementEnum) => {
+    try {
+      await createHatchling(element)
+
+      setElement(element)
+      setStage(StageEnum.Baby)
+    }
+    catch (error: any) {
+      openToast(error)
+    }
   }
 
   const fetchHatchling = async () => {
@@ -58,6 +78,9 @@ function Main(): JSX.Element {
 
   return (
   <>
+    <Toast
+      text={errorMessage}
+      show={showToast}/>
     <div className={stage === StageEnum.Egg ? '' : 'hidden'}>
       <Eggs hatchEgg={hatchEgg}/>
     </div>

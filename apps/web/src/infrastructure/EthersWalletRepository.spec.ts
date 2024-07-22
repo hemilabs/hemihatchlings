@@ -16,7 +16,8 @@ vi.mock('ethers', async () => {
       Contract: vi.fn().mockReturnValue({
         mintNFTs: vi.fn().mockResolvedValue({
           hash: '0x9abab8480d6da31404f045c011ec9fafee4e869bb34808f96852a0fd81bbcc0d'
-        })
+        }),
+        balanceOf: vi.fn().mockResolvedValue(0)
       })
     }
   }
