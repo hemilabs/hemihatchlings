@@ -6,7 +6,7 @@ interface ToastProps {
 function Toast({ text, show }: ToastProps): JSX.Element {
   return (
     <div id="toast-danger"
-      className={`${show ? 'opacity-100' : 'opacity-0'}
+      className={`${show ? 'opacity-100 z-50' : 'opacity-0 z-[-1]'}
         transition-opacity ease-in-out delay-150 duration-300 
         fixed top-3 right-3  items-center w-full max-w-xs p-4 mb-4
         rounded-lg shadow text-white bg-red-800`}
