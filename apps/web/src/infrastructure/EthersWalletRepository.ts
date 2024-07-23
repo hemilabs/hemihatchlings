@@ -43,8 +43,7 @@ export class EthersWalletRepository implements WalletRepository {
     this.contractAddress = {
       [ElementEnum.Fire]: import.meta.env.VITE_FIRE_SMART_CONTRACT_ADDRESS,
       [ElementEnum.Water]: import.meta.env.VITE_WATER_SMART_CONTRACT_ADDRESS,
-      [ElementEnum.Earth]: import.meta.env.VITE_EARTH_SMART_CONTRACT_ADDRESS,
-      [ElementEnum.Air]: import.meta.env.VITE_AIR_SMART_CONTRACT_ADDRESS
+      [ElementEnum.Earth]: import.meta.env.VITE_EARTH_SMART_CONTRACT_ADDRESS
     }
   }
 

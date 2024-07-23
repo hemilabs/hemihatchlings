@@ -81,7 +81,7 @@ exports[`src/presentation/Main > renders correctly 1`] = `
       class="mt-4 sm:mt-8 lg:mt-20"
     >
       <div
-        class="opacity-0
+        class="opacity-0 z-[-1]
         transition-opacity ease-in-out delay-150 duration-300 
         fixed top-3 right-3  items-center w-full max-w-xs p-4 mb-4
         rounded-lg shadow text-white bg-red-800"
@@ -232,11 +232,6 @@ exports[`src/presentation/Main > renders correctly 1`] = `
                 class="hidden"
                 src="./testnet/earth-baby.png"
               />
-              <img
-                alt="Air Baby"
-                class="hidden"
-                src="./testnet/air-baby.png"
-              />
             </div>
             <div
               class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
@@ -266,11 +261,6 @@ exports[`src/presentation/Main > renders correctly 1`] = `
                 class="hidden"
                 src="./testnet/earth-adult.png"
               />
-              <img
-                alt="Air Adult"
-                class="hidden"
-                src="./testnet/air-adult.png"
-              />
             </div>
             <div
               class="font-monaco text-sm text-white mt-2 text-center sm:text-base md:text-lg md:mt-4"
@@ -281,7 +271,7 @@ exports[`src/presentation/Main > renders correctly 1`] = `
           <img
             alt="Lock Icon"
             class="
-            absolute m-auto top-0 bottom-0 left-0 right-0"
+            absolute m-auto top-40 bottom-0 left-0 right-0"
             src="/src/assets/lock-icon.png"
           />
         </div>

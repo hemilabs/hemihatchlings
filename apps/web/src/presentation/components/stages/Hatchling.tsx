@@ -7,12 +7,10 @@ import { getImage } from '../../ImageHandler'
 const fireBaby = getImage('fire-baby.png')
 const waterBaby = getImage('water-baby.png')
 const earthBaby = getImage('earth-baby.png')
-const airBaby = getImage('air-baby.png')
 
 const fireAdult = getImage('fire-adult.png')
 const waterAdult = getImage('water-adult.png')
 const earthAdult = getImage('earth-adult.png')
-const airAdult = getImage('air-adult.png')
 
 interface HatchlingProps {
   element: ElementEnum,
@@ -62,8 +60,6 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
             className={`${element === ElementEnum.Water ? '' : 'hidden'}`} />
           <img src={earthBaby} alt="Earth Baby"
             className={`${element === ElementEnum.Earth ? '' : 'hidden'}`} />
-          <img src={airBaby} alt="Air Baby"
-            className={`${element === ElementEnum.Air ? '' : 'hidden'}`} />
         </div>
         <div className="font-monaco text-sm text-white mt-2 text-center
           sm:text-base md:text-lg md:mt-4">
@@ -79,8 +75,6 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
             className={`${element === ElementEnum.Water ? '' : 'hidden'}`} />
           <img src={earthAdult} alt="Earth Adult"
             className={`${element === ElementEnum.Earth ? '' : 'hidden'}`} />
-          <img src={airAdult} alt="Air Adult"
-            className={`${element === ElementEnum.Air ? '' : 'hidden'}`} />
         </div>
 
         <div className="font-monaco text-sm text-white mt-2 text-center
@@ -92,7 +86,7 @@ function Hatchling({ element, stage }:HatchlingProps): JSX.Element {
       <img src={lockIcon}
           alt="Lock Icon"
           className={`${isAdult() ? 'hidden' : ''}
-            absolute m-auto top-0 bottom-0 left-0 right-0`}/>
+            absolute m-auto top-40 bottom-0 left-0 right-0`}/>
 
     </div>
     
