@@ -97,7 +97,7 @@ jobs:
       namespace: "hemihatchlings"
       kustomize: "./infrastructure/kustomize/overlays/testnet/"
       environment-name: "testnet"
-      environment-url: "https://hemihatchlings-testnet.hemi.xyz/"
+      environment-url: "https://testnet.hatchlings.hemi.xyz/"
       image: |
         hemilabs/hemihatchlings-api:${{ needs.prepare.outputs.tag }}
         hemilabs/hemihatchlings-testnet:${{ needs.prepare.outputs.tag }}
