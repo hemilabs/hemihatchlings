@@ -1,5 +1,5 @@
 ## -*- docker-image-name: "hemilabs/hemihatchlings-web-testnet:1.0.0" -*-
-FROM node:20 as build
+FROM node:20.16.0-alpine3.20@sha256:eb8101caae9ac02229bd64c024919fe3d4504ff7f329da79ca60a04db08cef52
 
 COPY package*.json ./
 
@@ -17,7 +17,7 @@ RUN npm install
 
 RUN npm run build
 
-FROM nginx:alpine
+FROM nginx:1.27.0-alpine3.19-slim@sha256:a529900d9252ce5d04531a4a594f93736dbbe3ec155a692d10484be82aaa159a
 
 COPY --from=build /usr/src/app/apps/web/dist /usr/share/nginx/html
 
