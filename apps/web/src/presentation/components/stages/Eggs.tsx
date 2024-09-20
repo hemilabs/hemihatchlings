@@ -18,9 +18,9 @@ interface EggProps {
 const Egg = ({ index, soldOut, image, onClick }: EggProps) => (<>
   { soldOut ?
     <div className="border border-white transition duration-500 hover:scale-110 relative">
-      <label className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-        z-10 font-monaco text-xl text-white md:text-2xl xl:text-3xl">
-        SOLD OUT
+      <label className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-52
+        z-10 font-monaco text-lg text-center text-white sm:text-2xl sm:w-60">
+        MINTING COMPLETE
       </label>
       <img className="blur" src={image} alt="Fire Egg" />
     </div>
