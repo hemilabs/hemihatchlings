@@ -106,10 +106,10 @@ We have two environments: `stage` and `production`.
 The project is automatically deployed using GitHub Actions. 
 
 ### Stage
-The `stage` environment is automatically deployed when a new tag is created. The tag must follow the pattern `v*.*.*`. For example, `v1.0.0`.
+The `stage` environment is automatically deployed when a Commit is pushed to the `main` branch.
 
 ### Production
-The `production` environment is automatically deployed when a Commit is pushed to the `main` branch.
+The `production` environment is automatically deployed when a new tag is created. The tag must follow the pattern `v*.*.*`. For example, `v1.0.0`.
 
 ## Contributing
 If you want to contribute to this project and make it better, your help is very welcome.
