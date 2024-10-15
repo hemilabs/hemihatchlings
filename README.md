@@ -1,4 +1,5 @@
 # Hemi Hatchlings
+
 Hemi Hatchlings offers an immersive introduction to the [Hemi Network's](https://hemi.xyz) approach to scaling the Ethereum and Bitcoin networks, merging elemental lore with blockchain finality principles.
 
 This document provides instructions on how to set up, run, and contribute to the project.
@@ -34,6 +35,7 @@ With their vigilant oversight, Ethereum's guardians ensure that every hatchling 
 Together, Ethereum's proof-of-stake mechanism and Bitcoin's proof-of-work consensus act as twin pillars of strength, ensuring that from the moment of adolescence to the ascent into adulthood, every milestone is engraved on-chain.
 
 ## Folder Structure
+
 The project is organized into the following folders:
 
 - `apps`: Contains the API and the Web application.
@@ -41,6 +43,7 @@ The project is organized into the following folders:
 - `infrastucture`: Contains the necessary files to deploy the project.
 
 ## Architecture
+
 This project is a monorepo composed of two applications: the API and the Web application and it is managed by [Turborepo](https://turbo.build/repo/docs).
 
 Both the API and the Web application follow the Domain-Driven Design (DDD) principles. You can find more information about the architecture in the `README.md` file of each project.
@@ -102,18 +105,23 @@ npm run lint
 ```
 
 ## Deployment
+
 We have two environments: `stage` and `production`.
-The project is automatically deployed using GitHub Actions. 
+The project is automatically deployed using GitHub Actions.
 
 ### Stage
+
 The `stage` environment is automatically deployed when a Commit is pushed to the `main` branch.
 
 ### Production
+
 The `production` environment is automatically deployed when a new tag is created. The tag must follow the pattern `v*.*.*`. For example, `v1.0.0`.
 
 ## Contributing
+
 If you want to contribute to this project and make it better, your help is very welcome.
 You can find more information about how to contribute in the [`CONTRIBUTING.md`](https://github.com/hemilabs/.github/blob/main/CONTRIBUTING.md) file.
 
 ## License
+
 This project is licensed under the MIT License - see the [`LICENSE`](./LICENSE) file for details.
