@@ -92,7 +92,7 @@ PORT=3000
 
 ## Contribution
 If you want to contribute to this project and make it better, your help is very welcome.
-You can find more information about how to contribute in the [`CONTRIBUTING.md`](../../CONTRIBUTING.md) file.
+You can find more information about how to contribute in the [`CONTRIBUTING.md`](https://github.com/hemilabs/.github/blob/main/CONTRIBUTING.md) file.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](../../LICENSE) file for details.
