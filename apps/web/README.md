@@ -1,7 +1,9 @@
 # Hemi Hatchlings Web App
+
 This is the web application of the Hemi Hatchlings project. It is a front-end application that allows users to visualize activities on the [Hemi network](https://hemi.xyz).
 
 ## Architecture
+
 The Web App is organized into the following layers:
 
 - Application
@@ -24,7 +26,6 @@ This layer contains the implementation of the interfaces/repositories. It is res
 ## Presentation
 
 This layer contains the user interface implemented with React. The components are responsible for the style and the interface,displaying its state and redirecting the user actions.
-
 
 ## Getting Started
 
@@ -96,8 +97,7 @@ The environment variables are defined in the `.env` file. The following variable
 - `VITE_WATER_SOLD_OUT`: Boolean value to set if the Water Element NFT collection is sold out.
 - `VITE_EARTH_SOLD_OUT`: Boolean value to set if the Earth Element NFT collection is sold out.
 
-
-```
+```env
 VITE_API_URL=http://hemihatchlings-api-service:3000
 
 # Hemi Testnet Network 
@@ -118,8 +118,10 @@ VITE_EARTH_SOLD_OUT='true'
 ```
 
 ## Contribution
+
 If you want to contribute to this project and make it better, your help is very welcome.
-You can find more information about how to contribute in the [`CONTRIBUTING.md`](../../CONTRIBUTING.md) file.
+You can find more information about how to contribute in the [`CONTRIBUTING.md`](https://github.com/hemilabs/.github/blob/main/CONTRIBUTING.md) file.
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](../../LICENSE) file for details.
