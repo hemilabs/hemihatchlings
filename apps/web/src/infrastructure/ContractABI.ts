@@ -1,20 +1,40 @@
-export default [
+[
 	{
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "baseURI",
+				"name": "_name",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "name",
+				"name": "_symbol",
 				"type": "string"
 			},
 			{
 				"internalType": "string",
-				"name": "symbol",
+				"name": "_baseTokenURI",
 				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_mintPrice",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maximumSupply",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maxiMintPerCall",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -145,6 +165,21 @@ export default [
 		"type": "error"
 	},
 	{
+		"inputs": [],
+		"name": "InvalidCount",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "MaximumSupplyReached",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "NotEnoughEtherToMint",
+		"type": "error"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -164,6 +199,11 @@ export default [
 			}
 		],
 		"name": "OwnableUnauthorizedAccount",
+		"type": "error"
+	},
+	{
+		"inputs": [],
+		"name": "TransferFailed",
 		"type": "error"
 	},
 	{
@@ -262,7 +302,7 @@ export default [
 	},
 	{
 		"inputs": [],
-		"name": "MAX_PER_MINT",
+		"name": "MAXIMUM_SUPPLY",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -275,7 +315,7 @@ export default [
 	},
 	{
 		"inputs": [],
-		"name": "MAX_SUPPLY",
+		"name": "MAXI_MINT_PER_CALL",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -288,7 +328,7 @@ export default [
 	},
 	{
 		"inputs": [],
-		"name": "PRICE",
+		"name": "MINT_PRICE",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -406,6 +446,24 @@ export default [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_count",
+				"type": "uint256"
+			}
+		],
+		"name": "mintNFTs",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "name",
 		"outputs": [
@@ -413,6 +471,19 @@ export default [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nextTokenId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -453,19 +524,6 @@ export default [
 	{
 		"inputs": [],
 		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_count",
-				"type": "uint256"
-			}
-		],
-		"name": "reserveNFTs",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -718,7 +776,7 @@ export default [
 		"inputs": [],
 		"name": "withdraw",
 		"outputs": [],
-		"stateMutability": "payable",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]
