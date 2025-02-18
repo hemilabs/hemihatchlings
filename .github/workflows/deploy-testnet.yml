@@ -80,8 +80,8 @@ jobs:
       secret-name: "dockerhub-secret"
       namespace: "hemihatchlings"
     secrets:
-      KUBECONFIG: "${{ secrets.VKE_TESTNET_KUBECONFIG }}"
-      KUBECONFIG_CONTEXT: "${{ secrets.VKE_TESTNET_KUBECONFIG_CONTEXT }}"
+      KUBECONFIG: "${{ secrets.APPS_PROD_KUBECONFIG }}"
+      KUBECONFIG_CONTEXT: "${{ secrets.APPS_PROD_KUBECONFIG_CONTEXT }}"
       DOCKER_USERNAME: "${{ secrets.DOCKER_USERNAME }}"
       DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
       DOCKER_EMAIL: "${{ secrets.DOCKER_EMAIL }}"
@@ -102,5 +102,5 @@ jobs:
         hemilabs/hemihatchlings-api:${{ needs.prepare.outputs.tag }}
         hemilabs/hemihatchlings-testnet:${{ needs.prepare.outputs.tag }}
     secrets:
-      KUBECONFIG: "${{ secrets.VKE_TESTNET_KUBECONFIG }}"
-      KUBECONFIG_CONTEXT: "${{ secrets.VKE_TESTNET_KUBECONFIG_CONTEXT }}"
+      KUBECONFIG: "${{ secrets.APPS_PROD_KUBECONFIG }}"
+      KUBECONFIG_CONTEXT: "${{ secrets.APPS_PROD_KUBECONFIG_CONTEXT }}"
