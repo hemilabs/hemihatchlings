@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hemihatchlings-api
-        image: hemilabs/hemihatchlings-api:1.0.0
+        image: hemilabs/hemihatchlings-api:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 3000

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hemihatchlings-web
-        image: hemilabs/hemihatchlings-web:latest
+        image: hemilabs/hemihatchlings-testnet:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
