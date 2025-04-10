@@ -1,3 +1,6 @@
+import hemiSocials from 'hemi-socials'
+
+const { discordUrl, githubUrl, twitterUrl } = hemiSocials
 
 function Header(): JSX.Element {
   return (
@@ -11,15 +14,15 @@ function Header(): JSX.Element {
       <div>
         <ul className="font-monaco text-white text-sm text-right
           sm:text-lg lg:text-xl">
-          <a href="https://github.com/hemilabs"
+          <a href={githubUrl}
             target='_blank'
             className="hover:text-gray-400"><li>GITHUB</li></a>
-          <a href="https://discord.gg/RyhaPp7NvQ"
+          <a href={discordUrl}
             target='_blank'
             className="hover:text-gray-400">
             <li>COMMUNITY</li>
           </a>
-          <a href="https://twitter.com/hemi_xyz/"
+          <a href={twitterUrl}
             target='_blank'
             className="hover:text-gray-400">
             <li>TWITTER</li>

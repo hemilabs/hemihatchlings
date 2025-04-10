@@ -30,7 +30,7 @@ exports[`src/presentation/Header > renders correctly 1`] = `
         </a>
         <a
           class="hover:text-gray-400"
-          href="https://discord.gg/RyhaPp7NvQ"
+          href="https://discord.gg/hemixyz"
           target="_blank"
         >
           <li>
