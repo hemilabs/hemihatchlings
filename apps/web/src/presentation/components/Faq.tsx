@@ -1,7 +1,10 @@
 import plus from '../../assets/plus.svg'
 import minus from '../../assets/minus.svg'
 import HowItWorks from './HowItWorks'
+import hemiSocials from 'hemi-socials'
 import { useState } from 'react'
+
+const { discordUrl, githubUrl } = hemiSocials
 
 function Faq(): JSX.Element {
   const [showHistory, setShowHistory] = useState(false)
@@ -33,7 +36,7 @@ function Faq(): JSX.Element {
         </div>
       </div>
       <div className="w-full max-w-screen-xl items-center p-8 border border-white">
-        <a className='flex flex-row justify-between' href="https://github.com/hemilabs" target='_blank'>
+        <a className='flex flex-row justify-between' href={githubUrl} target='_blank'>
           <h2 className="font-space font-normal text-white text-lg
             sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             ADD A FEATURE
@@ -43,7 +46,7 @@ function Faq(): JSX.Element {
       </div>
       <div className=" w-full max-w-screen-xl items-center p-8
         border border-white">
-        <a className='flex flex-row justify-between' href="https://discord.gg/RyhaPp7NvQ" target='_blank'>
+        <a className='flex flex-row justify-between' href={discordUrl} target='_blank'>
           <h2 className="font-space font-normal text-white text-lg
             sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             COMMUNITY

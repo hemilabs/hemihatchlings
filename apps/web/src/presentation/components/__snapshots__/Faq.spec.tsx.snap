@@ -258,7 +258,7 @@ exports[`src/presentation/Faq > renders correctly 1`] = `
     >
       <a
         class="flex flex-row justify-between"
-        href="https://discord.gg/RyhaPp7NvQ"
+        href="https://discord.gg/hemixyz"
         target="_blank"
       >
         <h2

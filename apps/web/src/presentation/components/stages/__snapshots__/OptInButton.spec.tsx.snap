@@ -18,59 +18,71 @@ exports[`src/presentation/Eggs > renders correctly 1`] = `
     <div
       class=""
     >
-      <button>
-        <div
-          class="border border-white transition duration-500 hover:scale-110"
+      <div
+        class="border border-white transition duration-500 hover:scale-110 relative"
+      >
+        <label
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-52 z-10 font-monaco text-lg text-center text-white sm:text-2xl sm:w-60"
         >
-          <img
-            alt="Fire Egg"
-            src="./testnet/fire-egg.png"
-          />
-        </div>
-        <div
-          class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
-        >
-          01
-        </div>
-      </button>
+          MINTING COMPLETE
+        </label>
+        <img
+          alt="Fire Egg"
+          class="blur"
+          src="./testnet/fire-egg.png"
+        />
+      </div>
+      <div
+        class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
+      >
+        01
+      </div>
     </div>
     <div
       class="hidden lg:block"
     >
-      <button>
-        <div
-          class="border border-white transition duration-500 hover:scale-110"
+      <div
+        class="border border-white transition duration-500 hover:scale-110 relative"
+      >
+        <label
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-52 z-10 font-monaco text-lg text-center text-white sm:text-2xl sm:w-60"
         >
-          <img
-            alt="Water Egg"
-            src="./testnet/water-egg.png"
-          />
-        </div>
-        <div
-          class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
-        >
-          02
-        </div>
-      </button>
+          MINTING COMPLETE
+        </label>
+        <img
+          alt="Fire Egg"
+          class="blur"
+          src="./testnet/water-egg.png"
+        />
+      </div>
+      <div
+        class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
+      >
+        02
+      </div>
     </div>
     <div
       class="hidden lg:block"
     >
-      <button>
-        <div
-          class="border border-white transition duration-500 hover:scale-110"
+      <div
+        class="border border-white transition duration-500 hover:scale-110 relative"
+      >
+        <label
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-52 z-10 font-monaco text-lg text-center text-white sm:text-2xl sm:w-60"
         >
-          <img
-            alt="Earth Egg"
-            src="./testnet/earth-egg.png"
-          />
-        </div>
-        <div
-          class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
-        >
-          03
-        </div>
-      </button>
+          MINTING COMPLETE
+        </label>
+        <img
+          alt="Fire Egg"
+          class="blur"
+          src="./testnet/earth-egg.png"
+        />
+      </div>
+      <div
+        class="font-monaco text-sm text-white mt-2 text-left sm:text-base md:text-lg md:mt-4"
+      >
+        03
+      </div>
     </div>
     <button
       class="disabled:opacity-50 lg:hidden"
